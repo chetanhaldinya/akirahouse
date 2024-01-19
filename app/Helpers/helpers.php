@@ -490,3 +490,24 @@ function getReqResponseTime()
     $requestTime = number_format((microtime(true) - $startTime) * 1000, 0) . 'ms';
     return $requestTime;
 }
+
+
+function statusArray()
+{
+   $data = [
+    0 => 'Inactive',
+    1 => 'Active',
+   ];
+    return $data;
+}
+
+function getStatus($status)
+{
+    if($status == 1){
+        $data = 'Active';
+    }else{
+        $data = 'Inactive';
+    }
+    return $data;
+}
+

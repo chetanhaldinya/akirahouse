@@ -35,5 +35,6 @@ return [
     'profile' => 'Profile',
     'product' => 'Product|Products',
     'page_content' => 'Page Contents',
+    'banner' => 'Banner|Banners',
 
 ];

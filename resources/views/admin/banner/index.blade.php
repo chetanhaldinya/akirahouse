@@ -3,26 +3,22 @@
 @section('content')
     @include('admin.layouts.components.header', [
         'title' => __('messages.list', [
-            'name' => trans_choice('content.page_content', 2),
+            'name' => trans_choice('content.banner', 2),
         ]),
-        'breadcrumbs' => Breadcrumbs::render('admin.page-contents.index'),
+        'breadcrumbs' => Breadcrumbs::render('admin.banners.index'),
         'filter' => false,
         'create_btn' => [
             'status' => true,
-            'route' => route('admin.page-contents.create'),
+            'route' => route('admin.banners.create'),
             'name' => __('messages.create', [
-                'name' => trans_choice('content.page_content', 2),
+                'name' => trans_choice('content.banner', 2),
             ]),
         ],
-        // 'export' => [
-        //     'status' => true,
-        //     'route' => route('admin.page-contents.getdownload'),
-        // ],
     ])
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.name_title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
             ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
@@ -57,7 +53,7 @@
                     $(row).find("td").last().addClass('text-danger');
                 },
                 ajax: {
-                    "url": "{{ route('admin.page-contents.index') }}",
+                    "url": "{{ route('admin.banners.index') }}",
                     data: function(d) {
                         d.name = $('input[name=name]').val();
                         d.status = $('select[name=status]').val();
@@ -85,7 +81,7 @@
                         data: 'title',
                         name: 'title',
                         render: function(data, type, row, meta) {
-                            var show_url = `{{ url('/') }}/admin/page-contents/` + row['id'] +
+                            var show_url = `{{ url('/') }}/admin/banners/` + row['id'] +
                                 `?tab=details`;
                             return ` <a href="${show_url}">
                                     <div class="font-medium whitespace-no-wrap">${data}</div>
@@ -115,9 +111,9 @@
                         // visible:false,
                         render: function(data, type, row, meta) {
 
-                            var edit_url = `{{ url('/') }}/admin/page-contents/` + row['id'] +
+                            var edit_url = `{{ url('/') }}/admin/banners/` + row['id'] +
                                 `/edit/?tab=edit`;
-                            var show_url = `{{ url('/') }}/admin/page-contents/` + row['id'] +
+                            var show_url = `{{ url('/') }}/admin/banners/` + row['id'] +
                                 `?tab=details`;
                             var edit_data = actionEditButton(edit_url, row['id']);
                             var show_data = actionShowButton(show_url);
@@ -132,7 +128,7 @@
         $(document).on('click', '.clsstatus', function() {
             var id = $(this).attr('data-id');
             var status = $(this).attr('data-status');
-            var url = `{{ url('/') }}/admin/page-contents/status/` + id + `/` + status;
+            var url = `{{ url('/') }}/admin/banners/status/` + id + `/` + status;
             tableChnageStatus(url, oTable);
         });
     </script>

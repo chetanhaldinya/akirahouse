@@ -86,5 +86,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         //Admin PageContent
         Route::get('/page-contents/status/{id}/{status}', 'PageContentController@status');
         Route::resource('page-contents', PageContentController::class);
+         //Admin Banner
+         Route::get('/banners/status/{id}/{status}', 'BannerController@status');
+         Route::resource('banners', BannerController::class);
     });
 });

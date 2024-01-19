@@ -72,77 +72,7 @@
                     <div class="separator my-2"></div>
                     <!--end::Menu separator-->
                     <!--begin::Menu item-->
-                    <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start"
-                        data-kt-menu-flip="bottom, top">
-                        <a href="javascript:void(0)" class="menu-link px-5">
-                            @if (session()->get('locale') == 'en')
-                                <span
-                                    class="menu-title position-relative">{{ trans_choice('content.topbar.language', 1) }}
-                                    <span
-                                        class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                        <img class="w-15px h-15px rounded-1 ms-2"
-                                            src="{{ asset('admin/dist/media/flags/united-states.svg') }}"
-                                            alt="common_setup" />
-                                    </span>
-                                </span>
-                            @elseif(session()->get('locale') == 'gr')
-                                <span
-                                    class="menu-title position-relative">{{ trans_choice('content.topbar.language', 1) }}
-                                    <span
-                                        class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">Germany
-                                        <img class="w-15px h-15px rounded-1 ms-2"
-                                            src="{{ asset('admin/dist/media/flags/germany.svg') }}"
-                                            alt="common_setup" />
-                                    </span>
-                                </span>
-                            @else
-                                <span
-                                    class="menu-title position-relative">{{ trans_choice('content.topbar.language', 1) }}
-                                    <span
-                                        class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                        <img class="w-15px h-15px rounded-1 ms-2"
-                                            src="{{ asset('admin/dist/media/flags/united-states.svg') }}"
-                                            alt="common_setup" />
-                                    </span>
-                                </span>
-                            @endif
-
-
-                        </a>
-                        <!--begin::Menu sub-->
-                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="javascript:void(0)"
-                                    class="menu-link d-flex px-5 {{ session()->get('locale') == 'en' ? 'active' : '' }}"
-                                    id="lang_english">
-                                    <span class="symbol symbol-20px me-4">
-                                        <img class="rounded-1"
-                                            src="{{ asset('admin/dist/media/flags/united-states.svg') }}"
-                                            alt="common_setup" />
-                                    </span>English
-                                </a>
-
-                                <span style="display: none" id="auth_user_id"
-                                    user_id="{{ $auth_user->id }}">{{ $auth_user->id }}</span>
-                                {{-- <span class="menu-link d-flex px-5 active">English</span> --}}
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="javascript:void(0)" id="lang_german"
-                                    class="menu-link d-flex px-5 {{ session()->get('locale') == 'gr' ? 'active' : '' }}">
-                                    <span class="symbol symbol-20px me-4">
-                                        <img class="rounded-1" src="{{ asset('admin/dist/media/flags/germany.svg') }}"
-                                            alt="common_setup" />
-                                    </span>German
-                                </a>
-                            </div>
-                            <!--end::Menu item-->
-
-                        </div>
-                        <!--end::Menu sub-->
-                    </div>
+                   
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-5 my-1">

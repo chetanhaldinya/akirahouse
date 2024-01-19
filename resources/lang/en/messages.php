@@ -57,4 +57,5 @@ return [
     'account_settings' => 'Account Settings',
     'sign_out' => 'Sign Out',
     'profile' => 'Profile',
+    'banner' => 'Banner|Banners',
 ];

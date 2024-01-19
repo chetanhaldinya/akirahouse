@@ -193,6 +193,9 @@ return [
 
     'content_title' => 'Content',
     'slug_title' => 'Slug',
+    'banner' => 'Banner|Banners',
+    'image' => 'Image|Images',
+    
 
 
 ];
