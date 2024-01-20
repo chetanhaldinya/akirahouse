@@ -22,19 +22,17 @@
                         <div class="row mb-5">
                             <div class="row mb-5">
                                 <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.title_title', 1) }}
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.is_active', 1) }}
                                     </div>
-                                    <div class="fs-5 text-gray-600">{{ $page_content->title }}</div>
-                                </div>
-                                <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.slug_title', 1) }}</div>
-                                    <div class="fs-5 text-gray-600">{{ $page_content->slug }}</div>
+                                    <div class="fs-5 text-gray-600">{{ isset($banner->is_active) ? getStatus($banner->is_active) : 'Na' }}</div>
                                 </div>
                             </div>
                             <div class="row mb-5">
                                 <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.content_title', 1) }}</div>
-                                    <div class="fs-5 text-gray-600">{!! $page_content->content !!}</div>
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.image_title', 1) }}</div>
+                                    <div class="fs-5 text-gray-600"><a href="{{isset($banner->image) ? $banner->image : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                        <img src="{{isset($banner->image) ? $banner->image : 'Na'}}" height="150px" width="350px" alt="Banner image">
+                                  </div></a></div>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +43,7 @@
                     <!--begin::Actions-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="button" class="btn btn-primary">
-                            <a href="{{ route('admin.page-contents.index') }}"
+                            <a href="{{ route('admin.banners.index') }}"
                                 class="text-white">{{ __('content.back_title') }}</a>
                         </button>
                     </div>

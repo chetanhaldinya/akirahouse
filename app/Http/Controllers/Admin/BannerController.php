@@ -21,7 +21,7 @@ class BannerController extends Controller
     public function __construct()
     {
 
-        $this->image_directory = 'files/users';
+        $this->image_directory = 'files/banners';
         //route
         $this->index_route_name = 'admin.banners.index';
         $this->create_route_name = 'admin.banners.create';

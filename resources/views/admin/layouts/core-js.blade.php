@@ -35,6 +35,21 @@
         return env('MAX_INT_DIGIT');
     }
 
+    function readURL(input, attr_id = "") {
+        var attrId = $(attr_id).attr('id');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                if (attrId) {
+                    $('#backImage_' + attrId).attr('src', e.target.result);
+                } else {
+                    $('#backImage_').attr('src', e.target.result);
+                }
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
     function isPositiveInteger(str) {
         // if (typeof str !== 'string') {
         //     return false;

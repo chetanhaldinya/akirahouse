@@ -1,8 +1,8 @@
 @extends('admin.layouts.base')
 @section('content')
     @include('admin.layouts.components.header', [
-        'title' => __('messages.edit', ['name' => trans_choice('content.page_content', 1)]),
-        'breadcrumbs' => Breadcrumbs::render('admin.page-contents.edit'),
+        'title' => __('messages.edit', ['name' => trans_choice('content.banner', 1)]),
+        'breadcrumbs' => Breadcrumbs::render('admin.banners.edit'),
     ])
 
     <!--begin::Post-->
@@ -19,14 +19,14 @@
                         <div class="flex-lg-row-fluid me-0 me-lg-20">
 
                             <!--begin::Form-->
-                            {!! Form::model($page_content, ['method' => 'PATCH', 'route' => ['admin.page-contents.update', $page_content->id], 'class' => 'form mb-15', 'id' => 'form_editor', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
+                            {!! Form::model($banner, ['method' => 'PATCH', 'route' => ['admin.banners.update', $banner->id], 'class' => 'form mb-15', 'id' => 'form_editor', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
                             @csrf
-                            <input type="hidden" name="id" value="{{ $page_content->id }}">
-                            @include('admin.page_content.form')
+                            <input type="hidden" name="id" value="{{ $banner->id }}">
+                            @include('admin.banner.form')
 
                             <!--begin::Actions-->
                             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                                <a href="{{ route('admin.page-contents.index') }}"
+                                <a href="{{ route('admin.banners.index') }}"
                                     class="btn btn-light btn-active-light-primary me-2 text-black">{{ __('content.back_title') }}</a>
                                 <button type="submit" id="submitBtn" class="btn btn-primary">Save
                                     Changes</button>

@@ -195,7 +195,16 @@ return [
     'slug_title' => 'Slug',
     'banner' => 'Banner|Banners',
     'image' => 'Image|Images',
-    
-
-
+    'is_active' => 'Status',
+    'flat' => 'Flat|Flats',
+    'title' => 'Title',
+    'size' => 'Size',
+    'bed_room' => 'Bed Room|Bed Rooms',
+    'max_guest' => 'Max Guest|Max Guests',
+    'amount' => 'Amount',
+    'youtube_url' => 'Youtube URL',
+    'short_description' => 'Short Description',
+    'long_description' => 'Long Description',
+    'other_images' => 'Other images',
+    'bath_room' => 'Bath room',
 ];

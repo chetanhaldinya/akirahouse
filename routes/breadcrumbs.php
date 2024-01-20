@@ -140,3 +140,5 @@ Breadcrumbs::resource('products', $mls->messageLanguage('only_name', 'product', 
 Breadcrumbs::resource('page-contents', $mls->messageLanguage('only_name', 'page_content', 2));
 /*------------- Admin Banner  ------------------------*/
 Breadcrumbs::resource('banners', $mls->messageLanguage('only_name', 'banner', 2));
+/*------------- Admin Flat  ------------------------*/
+Breadcrumbs::resource('flats', $mls->messageLanguage('only_name', 'flat', 2));

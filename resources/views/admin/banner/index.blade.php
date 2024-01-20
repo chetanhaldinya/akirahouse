@@ -78,15 +78,12 @@
                     },
 
                     {
-                        data: 'title',
-                        name: 'title',
+                        data: 'image',
+                        name: 'image',
                         render: function(data, type, row, meta) {
-                            var show_url = `{{ url('/') }}/admin/banners/` + row['id'] +
-                                `?tab=details`;
-                            return ` <a href="${show_url}">
-                                    <div class="font-medium whitespace-no-wrap">${data}</div>
-                                </a>`;
-                            // return actionTitleButton(data, show_url);
+                            return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                          <img src="${data}" height="150px" width="350px" alt="Banner image">
+                                    </div></a> `;
                         }
                     },
                     {

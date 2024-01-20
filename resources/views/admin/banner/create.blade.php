@@ -1,8 +1,8 @@
 @extends('admin.layouts.base')
 @section('content')
     @include('admin.layouts.components.header', [
-        'title' => __('messages.create', ['name' => trans_choice('content.page_content', 1)]),
-        'breadcrumbs' => Breadcrumbs::render('admin.page-contents.create'),
+        'title' => __('messages.create', ['name' => trans_choice('content.banner', 1)]),
+        'breadcrumbs' => Breadcrumbs::render('admin.banners.create'),
     ])
 
     <!--begin::Post-->
@@ -19,12 +19,12 @@
                         <div class="flex-lg-row-fluid me-0 me-lg-20">
 
                             <!--begin::Form-->
-                            {!! Form::open(['route' => 'admin.page-contents.store', 'method' => 'POST', 'class' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
+                            {!! Form::open(['route' => 'admin.banners.store', 'method' => 'POST', 'class' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
 
-                            @include('admin.page_content.form')
+                            @include('admin.banner.form')
                             <!--begin::Actions-->
                             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                                <a href="{{ route('admin.page-contents.index') }}"
+                                <a href="{{ route('admin.banners.index') }}"
                                     class="btn btn-light btn-active-light-primary me-2 text-black">{{ __('content.back_title') }}</a>
                                 <button type="submit" id="submitBtn"
                                     class="btn btn-primary">{{ __('content.create_title') }}</button>

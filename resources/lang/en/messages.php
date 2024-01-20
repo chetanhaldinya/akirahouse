@@ -58,4 +58,5 @@ return [
     'sign_out' => 'Sign Out',
     'profile' => 'Profile',
     'banner' => 'Banner|Banners',
+    'flat' => 'Flat|Flats',
 ];
