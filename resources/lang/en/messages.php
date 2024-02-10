@@ -59,4 +59,7 @@ return [
     'profile' => 'Profile',
     'banner' => 'Banner|Banners',
     'flat' => 'Flat|Flats',
+    'testimonial' => 'Testimonial|Testimonials',
+    'team' => 'Team|Teams',
+
 ];

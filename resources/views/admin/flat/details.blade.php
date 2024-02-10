@@ -61,6 +61,22 @@
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="row mb-5">
+                            <div class="col-md-12 fv-row">
+                                <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.short_description', 1) }}
+                                </div>
+                                <div class="fs-5 text-gray-600">{!! isset($flat->short_description) ? $flat->short_description : 'Na' !!}</div>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6 fv-row">
+                                <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.long_description', 1) }}</div>
+                                <div class="fs-5 text-gray-600">{!! isset($flat->long_description) ? $flat->long_description : 'Na' !!}
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-5">
                             <div class="col-md-6 fv-row">
                                 <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.youtube_url', 1) }}
                                 </div>
@@ -86,10 +102,10 @@
                             </div>
                             <div class="col-md-6 fv-row" style="display: flex; justify-content: space-between;">
                                 @foreach ($flat->flat_images as $image)
-                                        <img style="margin: 10px; max-width: 389px; max-height: 421px; width: 389px; height: 421px;"
-                                            src="{{ $image->image }}"
-                                            alt="{{ isset($flat->title) ? $flat->title : 'Propduct Title' }}"
-                                            draggable="false">
+                                    <img style="margin: 10px; max-width: 389px; max-height: 421px; width: 389px; height: 421px;"
+                                        src="{{ $image->image }}"
+                                        alt="{{ isset($flat->title) ? $flat->title : 'Propduct Title' }}"
+                                        draggable="false">
                                 @endforeach
                             </div>
                         </div>
@@ -98,7 +114,7 @@
                     <!--begin::Actions-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="button" class="btn btn-primary">
-                            <a href="{{ route('admin.products.index') }}"
+                            <a href="{{ route('admin.flats.index') }}"
                                 class="text-white">{{ __('content.back_title') }}</a>
                         </button>
                     </div>

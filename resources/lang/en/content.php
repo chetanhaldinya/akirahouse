@@ -207,4 +207,10 @@ return [
     'long_description' => 'Long Description',
     'other_images' => 'Other images',
     'bath_room' => 'Bath room',
+    'testimonial' => 'Testimonial|Testimonials',
+    'name' => 'Name',
+    'designation' => 'Designation|Designations',
+    'content' => 'Content',
+    'team' => 'Team|Teams',
+    'position' => 'Position|Positions',
 ];

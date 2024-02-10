@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminErrorPageController;
 use App\Http\Controllers\Admin\Auth\LoginController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('admin.dashboard');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('front.home');
+    Route::get('/rooms', 'rooms')->name('front.room');
+    Route::get('/blogs', 'blogs')->name('front.blog');
+    Route::get('/contact-us', 'contact')->name('front.contact');
+    Route::get('/about-us', 'about')->name('front.about');
+    Route::get('/services', 'service')->name('front.service');
+    Route::get('/galleries', 'gallery')->name('front.gallery');
+    Route::get('/faqs', 'faq')->name('front.faq');
 });
-
-Route::get('/admin/test', 'TestController@test');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', function () {
@@ -86,12 +91,29 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         //Admin PageContent
         Route::get('/page-contents/status/{id}/{status}', 'PageContentController@status');
         Route::resource('page-contents', PageContentController::class);
-         //Admin Banner
-         Route::get('/banners/status/{banner}/{status}', 'BannerController@status');
-         Route::resource('banners', BannerController::class);
+        //Admin Banner
+        Route::get('/banners/status/{banner}/{status}', 'BannerController@status');
+        Route::resource('banners', BannerController::class);
 
-          //Admin Flat
-          Route::get('/flats/status/{flat}/{status}', 'FlatController@status');
-          Route::resource('flats', FlatController::class);
+        //Admin Flat
+        Route::get('/flats/status/{flat}/{status}', 'FlatController@status');
+        Route::resource('flats', FlatController::class);
+
+        //testimonials routes
+        Route::controller(TestimonialController::class)->group(function () {
+            Route::get('/testimonials/status/{id}/{status}', 'status');
+        });
+        Route::resource('/testimonials', TestimonialController::class);
+        //end::testimonials routes
+
+          //teams routes
+          Route::controller(TeamController::class)->group(function () {
+            Route::get('/teams/status/{id}/{status}', 'status');
+        });
+        Route::resource('/teams', TeamController::class);
+        //end::teams routes
+        //start::Gallery manager
+        Route::resource('/galleries', GalleryController::class)->only('index', 'store', 'destroy');
+        //end::Gallery manager
     });
 });

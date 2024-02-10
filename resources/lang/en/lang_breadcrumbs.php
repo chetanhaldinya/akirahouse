@@ -37,4 +37,7 @@ return [
     'page_content' => 'Page Contents',
     'banner' => 'Banner|Banners',
 'flat' => 'Flat|Flats',
+'testimonial' => 'Testimonial|Testimonials',
+'team' => 'Team|Teams',
+
 ];

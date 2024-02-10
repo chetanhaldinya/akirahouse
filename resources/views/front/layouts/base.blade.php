@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    @yield('title')
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="{{ $favicon_img }}" type="image/x-icon">
+    
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/flaticon.min.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/fontawesome-5.14.0.min.css')}}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/bootstrap.min.css')}}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/magnific-popup.min.css')}}">
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/nice-select.min.css')}}">
+    <!-- Type Writer -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/jquery.animatedheadline.css')}}">
+    <!-- Animate -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/animate.min.css')}}">
+    <!-- Slick -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/slick.min.css')}}">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{{asset('front/assets/css/style.css')}}">
+    @stack('styles')
+</head>
+<body class="home-one">
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+@include('front.layouts.header')
+@yield('content')
+@include('front.layouts.footer')
+    </div>
+    <!--End pagewrapper-->
+   
+    
+    <!-- Jquery -->
+    <script src="{{asset('front/assets/js/jquery-3.6.0.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{asset('front/assets/js/bootstrap.min.js')}}"></script>
+    <!-- Appear Js -->
+    <script src="{{asset('front/assets/js/appear.min.js')}}"></script>
+    <!-- Slick -->
+    <script src="{{asset('front/assets/js/slick.min.js')}}"></script>
+    <!-- Magnific Popup -->
+    <script src="{{asset('front/assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <!-- Nice Select -->
+    <script src="{{asset('front/assets/js/jquery.nice-select.min.js')}}"></script>
+    <!-- Image Loader -->
+    <script src="{{asset('front/assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <!-- Calendar -->
+    <script src="{{asset('front/assets/js/calendar.global.min.js')}}"></script>
+    <!-- Circle Progress -->
+    <script src="{{asset('front/assets/js/circle-progress.min.js')}}"></script>
+    <!-- Isotope -->
+    <script src="{{asset('front/assets/js/isotope.pkgd.min.js')}}"></script>
+    <!--  WOW Animation -->
+    <script src="{{asset('front/assets/js/wow.min.js')}}"></script>
+    <!-- Custom script -->
+    <script src="{{asset('front/assets/js/script.js')}}"></script>
+    @stack('styles')
+</body>
+</html>
