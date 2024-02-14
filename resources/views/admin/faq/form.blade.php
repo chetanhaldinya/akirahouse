@@ -19,24 +19,49 @@
     <!--end::Input group-->
 
     <div class="row mb-6">
-        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.image', 1) }}(1765px * 776px)</label>
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.question_title', 1) }}</label>
         <div class="col-lg-7 fv-row">
-        {!! Form::file('image', [
+        <!-- {!! Form::file('image', [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
             'id' => 'image',
             'onchange' => 'readURL(this, image);',
             'accept' => 'image/x-png,image/jpg,image/jpeg,image/png',
             'placeholder' => __('Upload Image '),
+        ]) !!} -->
+
+        {!! Form::file('question', [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'id' => 'question',
+            'onchange' => 'readURL(this, question);',
+           
         ]) !!}
     </div>
-    <div class="col-lg-3 fv-row">
+    <div class="row mb-6">
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.answer_title', 1) }}</label>
+        <div class="col-lg-7 fv-row">
+        <!-- {!! Form::file('image', [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'id' => 'image',
+            'onchange' => 'readURL(this, image);',
+            'accept' => 'image/x-png,image/jpg,image/jpeg,image/png',
+            'placeholder' => __('Upload Image '),
+        ]) !!} -->
+
+        {!! Form::file('answer', [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'id' => 'answer',
+            'onchange' => 'readURL(this, answer);',
+         
+        ]) !!}
+    </div>
+    <!-- <div class="col-lg-3 fv-row">
             @if (isset($faq->image))
                 <img id="backImage_image" width="80px" height="80px" src="{{ $faq->image }}" title="Image">
                 @else
                 <img id="backImage_image" src="{{blankImageUrl()}}" width="80px" height="80px" title="Image">
             @endif
         </div>
-    </div>
+    </div> -->
     <!--end::Card body-->
 </div>
 

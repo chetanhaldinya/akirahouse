@@ -88,22 +88,24 @@
                     //                 </div></a> `;
                     //     }
                     // },
+
                     {
-                        data: 'question',
-                        name: 'question',
-                        render: function(data, type, row, meta) {
-                            var attr = `data-id="${ row['question'] }" data-status="${ data }"`;
-                            return avtive_data;
-                        }
-                    },
-                    {
-                        data: 'answer',
-                        name: 'answer',
-                        render: function(data, type, row, meta) {
-                            var attr = `data-id="${ row['answer'] }" data-status="${ data }"`;
-                            return avtive_data;
-                        }
-                    },
+                         data: 'question',
+                         name: 'question',
+                         render: function(data, type, row, meta) {
+                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                         }
+                     },
+                    
+                    
+                     {
+                         data: 'answer',
+                         name: 'answer',
+                         render: function(data, type, row, meta) {
+                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                         }
+                     },
+                    
                     {
                         data: 'is_active',
                         name: 'is_active',
@@ -113,13 +115,13 @@
                             return avtive_data;
                         }
                     },
-                    {
-                        data: 'created_at',
-                        name: 'created_at',
-                        render: function(data, type, row, meta) {
-                            return getDateTimeByFormat(data);
-                        }
-                    },
+                    // {
+                    //     data: 'created_at',
+                    //     name: 'created_at',
+                    //     render: function(data, type, row, meta) {
+                    //         return getDateTimeByFormat(data);
+                    //     }
+                    // },
                     {
                         data: 'id',
                         name: 'id',
