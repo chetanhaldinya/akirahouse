@@ -1,3 +1,5 @@
+
+
 @extends('admin.layouts.base')
 
 @section('content')
@@ -115,13 +117,13 @@
                             return avtive_data;
                         }
                     },
-                    // {
-                    //     data: 'created_at',
-                    //     name: 'created_at',
-                    //     render: function(data, type, row, meta) {
-                    //         return getDateTimeByFormat(data);
-                    //     }
-                    // },
+                     {
+                         data: 'created_at',
+                         name: 'created_at',
+                         render: function(data, type, row, meta) {
+                             return getDateTimeByFormat(data);
+                         }
+                     },
                     {
                         data: 'id',
                         name: 'id',
