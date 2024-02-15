@@ -1,8 +1,8 @@
 @extends('admin.layouts.base')
 @section('content')
     @include('admin.layouts.components.header', [
-        'title' => __('messages.edit', ['name' => trans_choice('content.banner', 1)]),
-        'breadcrumbs' => Breadcrumbs::render('admin.banners.edit'),
+        'title' => __('messages.edit', ['name' => trans_choice('content.faq', 1)]),
+        'breadcrumbs' => Breadcrumbs::render('admin.faqs.edit'),
     ])
 
     <!--begin::Post-->
@@ -19,14 +19,14 @@
                         <div class="flex-lg-row-fluid me-0 me-lg-20">
 
                             <!--begin::Form-->
-                            {!! Form::model($banner, ['method' => 'PATCH', 'route' => ['admin.banners.update', $banner->id], 'class' => 'form mb-15', 'id' => 'form_editor', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
+                            {!! Form::model($faq, ['method' => 'PATCH', 'route' => ['admin.faqs.update', $faq->id], 'class' => 'form mb-15', 'id' => 'form_editor', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return checkForm(this);']) !!}
                             @csrf
-                            <input type="hidden" name="id" value="{{ $banner->id }}">
-                            @include('admin.banner.form')
+                            <input type="hidden" name="id" value="{{ $faq->id }}">
+                            @include('admin.faq.form')
 
                             <!--begin::Actions-->
                             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                                <a href="{{ route('admin.banners.index') }}"
+                                <a href="{{ route('admin.faqs.index') }}"
                                     class="btn btn-light btn-active-light-primary me-2 text-black">{{ __('content.back_title') }}</a>
                                 <button type="submit" id="submitBtn" class="btn btn-primary">Save
                                     Changes</button>

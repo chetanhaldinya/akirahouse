@@ -3,15 +3,15 @@
 @section('content')
     @include('admin.layouts.components.header', [
         'title' => __('messages.list', [
-            'name' => trans_choice('content.banner', 2),
+            'name' => trans_choice('content.faq', 2),
         ]),
-        'breadcrumbs' => Breadcrumbs::render('admin.banners.index'),
+        'breadcrumbs' => Breadcrumbs::render('admin.faqs.index'),
         'filter' => false,
         'create_btn' => [
             'status' => true,
-            'route' => route('admin.banners.create'),
+            'route' => route('admin.faqs.create'),
             'name' => __('messages.create', [
-                'name' => trans_choice('content.banner', 2),
+                'name' => trans_choice('content.faq', 2),
             ]),
         ],
     ])
@@ -53,7 +53,7 @@
                     $(row).find("td").last().addClass('text-danger');
                 },
                 ajax: {
-                    "url": "{{ route('admin.banners.index') }}",
+                    "url": "{{ route('admin.faqs.index') }}",
                     data: function(d) {
                         d.name = $('input[name=name]').val();
                         d.status = $('select[name=status]').val();
@@ -82,7 +82,7 @@
                         name: 'image',
                         render: function(data, type, row, meta) {
                             return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                          <img src="${data}" height="150px" width="350px" alt="Banner image">
+                                          <img src="${data}" height="150px" width="350px" alt="Faq image">
                                     </div></a> `;
                         }
                     },
@@ -108,9 +108,9 @@
                         // visible:false,
                         render: function(data, type, row, meta) {
 
-                            var edit_url = `{{ url('/') }}/admin/banners/` + row['id'] +
+                            var edit_url = `{{ url('/') }}/admin/faqs/` + row['id'] +
                                 `/edit/?tab=edit`;
-                            var show_url = `{{ url('/') }}/admin/banners/` + row['id'] +
+                            var show_url = `{{ url('/') }}/admin/faqs/` + row['id'] +
                                 `?tab=details`;
                             var edit_data = actionEditButton(edit_url, row['id']);
                             var show_data = actionShowButton(show_url);
@@ -125,7 +125,7 @@
         $(document).on('click', '.clsstatus', function() {
             var id = $(this).attr('data-id');
             var status = $(this).attr('data-status');
-            var url = `{{ url('/') }}/admin/banners/status/` + id + `/` + status;
+            var url = `{{ url('/') }}/admin/faqs/status/` + id + `/` + status;
             tableChnageStatus(url, oTable);
         });
     </script>

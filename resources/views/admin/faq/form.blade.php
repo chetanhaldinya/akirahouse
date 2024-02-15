@@ -30,8 +30,8 @@
         ]) !!}
     </div>
     <div class="col-lg-3 fv-row">
-            @if (isset($banner->image))
-                <img id="backImage_image" width="80px" height="80px" src="{{ $banner->image }}" title="Image">
+            @if (isset($faq->image))
+                <img id="backImage_image" width="80px" height="80px" src="{{ $faq->image }}" title="Image">
                 @else
                 <img id="backImage_image" src="{{blankImageUrl()}}" width="80px" height="80px" title="Image">
             @endif

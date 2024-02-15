@@ -16,13 +16,8 @@ class Faq extends Model
      * @var array
      */
     protected $fillable = [
-        'role_id',
-        'section_type',
         'question',
         'answer',
-        'is_answered',
-        'question_from',
-        'answered_by',
         'is_active'
     ];
 
