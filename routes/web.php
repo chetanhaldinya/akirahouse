@@ -95,8 +95,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/banners/status/{banner}/{status}', 'BannerController@status');
         Route::resource('banners', BannerController::class);
         //Admin Faq
-        Route::get('/faqs/status/{faq}/{status}', 'faqController@status');
-        Route::resource('faqs', faqController::class);
+        Route::get('/faqs/status/{faq}/{status}', 'FaqController@status');
+        Route::resource('faqs', FaqController::class);
 
         //Admin Flat
         Route::get('/flats/status/{flat}/{status}', 'FlatController@status');

@@ -29,9 +29,16 @@
                             </div>
                             <div class="row mb-5">
                                 <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.image_title', 1) }}</div>
-                                    <div class="fs-5 text-gray-600"><a href="{{isset($faq->image) ? $faq->image : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                        <img src="{{isset($faq->image) ? $faq->image : 'Na'}}" height="150px" width="350px" alt="faq image">
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.question_title', 1) }}</div>
+                                    <div class="fs-5 text-gray-600"><a href="{{isset($faq->question) ? $faq->question : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">  
+                                  </div></a></div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-md-6 fv-row">
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.answer_title', 1) }}</div>
+                                    <div class="fs-5 text-gray-600"><a href="{{isset($faq->answer) ? $faq-> : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">     
                                   </div></a></div>
                                 </div>
                             </div>

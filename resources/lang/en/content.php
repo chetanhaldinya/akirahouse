@@ -104,6 +104,7 @@ return [
         'customer' => 'Customer|Customers',
         'product' => 'Product|Products',
         'page_content' => 'Page Contents',
+        'faq' =>"Faq|faq's",
     ),
 
 
@@ -210,7 +211,12 @@ return [
     'testimonial' => 'Testimonial|Testimonials',
     'name' => 'Name',
     'designation' => 'Designation|Designations',
+    'enter_question' =>'Enter Question',
+    'enter_answer' =>'Enter Answer',
     'content' => 'Content',
     'team' => 'Team|Teams',
     'position' => 'Position|Positions',
+    'faq' => "Faq|Faq's",
+    'question' =>"Question|Questions",
+    'answer' =>"Answer|Answers",
 ];

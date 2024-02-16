@@ -19,26 +19,28 @@
     <!--end::Input group-->
 
     <div class="row mb-6">
-        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.image', 1) }}(1765px * 776px)</label>
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.question', 1) }}</label>
         <div class="col-lg-7 fv-row">
-        {!! Form::file('image', [
+        {!! Form::text('question',null, [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
-            'id' => 'image',
-            'onchange' => 'readURL(this, image);',
-            'accept' => 'image/x-png,image/jpg,image/jpeg,image/png',
-            'placeholder' => __('Upload Image '),
+            'onchange' => 'readURL(this,question);',
+            'placeholder' => trans_choice('content.enter_question', 1),
         ]) !!}
     </div>
-    <!-- <div class="col-lg-3 fv-row">
-            @if (isset($banner->image))
-                <img id="backImage_image" width="80px" height="80px" src="{{ $banner->image }}" title="Image">
-                @else
-                <img id="backImage_image" src="{{blankImageUrl()}}" width="80px" height="80px" title="Image">
-            @endif
-        </div> -->
+        </div>
+    
+    <div class="row mb-6">
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.answer', 1) }}</label>
+        <div class="col-lg-7 fv-row">
+        {!! Form::text('answer',null, [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'onchange' => 'readURL(this,answer);',
+            'placeholder' => trans_choice('content.enter_answer', 1),
+        ]) !!}
     </div>
+        </div>
     <!--end::Card body-->
-</div>
+        </div>
 
 @push('scripts')
     <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>

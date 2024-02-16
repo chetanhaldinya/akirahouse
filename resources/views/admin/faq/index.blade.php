@@ -18,9 +18,8 @@
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            <!-- ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)], -->
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.question', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.answer', 1)],
+            ['classname' => 'min-w-150px', 'title' => trans_choice('content.question', 1)],
+            ['classname' => 'min-w-150px', 'title' => trans_choice('content.answer', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
             ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
@@ -65,7 +64,7 @@
                       "<'row'<'col-sm-12'tr>>" +
                       "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
                 columnDefs: [{
-                    targets: [5],
+                    targets: [4],
                     orderable: false,
                     searchable: false,
                     // className: 'mdl-data-table__cell--non-numeric'
@@ -82,18 +81,14 @@
                         data: 'question',
                         name: 'question',
                         render: function(data, type, row, meta) {
-                            return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                        //   <img src="${data}" height="150px" width="350px" alt="faq image">
-                                    </div></a> `;
+                            return <div class="font-medium whitespace-no-wrap">${data}</div>;
                         }
                     },
                     {
                         data: 'answer',
                         name: 'answer',
                         render: function(data, type, row, meta) {
-                            return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                        //   <img src="${data}" height="150px" width="350px" alt="faq image"> 
-                                    </div></a> `;
+                            return return <div class="font-medium whitespace-no-wrap">${data}</div>;
                         }
                     },
                     // {
