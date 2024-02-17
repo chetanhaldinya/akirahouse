@@ -142,3 +142,6 @@ Breadcrumbs::resource('page-contents', $mls->messageLanguage('only_name', 'page_
 Breadcrumbs::resource('banners', $mls->messageLanguage('only_name', 'banner', 2));
 /*------------- Admin Flat  ------------------------*/
 Breadcrumbs::resource('flats', $mls->messageLanguage('only_name', 'flat', 2));
+Breadcrumbs::resource('galleries', "Gallery");
+Breadcrumbs::resource('faqs', "Faq");
+

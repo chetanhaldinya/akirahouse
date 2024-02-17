@@ -104,6 +104,7 @@ return [
         'customer' => 'Customer|Customers',
         'product' => 'Product|Products',
         'page_content' => 'Page Contents',
+        'faq' => 'Faq|faqs',
     ),
 
 
@@ -157,8 +158,6 @@ return [
     'filter' => 'Filter',
     'filter_options' => 'Filter Options',
     'reset' => 'Reset',
-    'active' => 'Active',
-    'inactive' => 'Inactive',
     'active_title' => 'Active',
     'inactive_title' => 'Inactive',
     'select_status' => 'Select Status',
@@ -207,4 +206,7 @@ return [
     'long_description' => 'Long Description',
     'other_images' => 'Other images',
     'bath_room' => 'Bath room',
+    'faq' => 'Faq|Faqs',
+    'question' => 'Question|Questions',
+    'answer' => 'Answer|Answers',
 ];

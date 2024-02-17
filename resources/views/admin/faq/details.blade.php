@@ -29,15 +29,15 @@
                             </div>
                             <div class="row mb-5">
                                 <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.question_title', 1) }}</div>
-                                    <div class="fs-5 text-gray-600"><a href="{{isset($faq->question) ? $Faq->question : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.question', 1) }}</div>
+                                    <div class="fs-5 text-gray-600"><a href="{{isset($Faq->question) ? $Faq->question : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
                                   </div></a></div>
                                 </div>
                             </div>
                             <div class="row mb-5">
                                 <div class="col-md-6 fv-row">
-                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.answer_title', 1) }}</div>
-                                    <div class="fs-5 text-gray-600"><a href="{{isset($faq->answer) ? $Faq->answer : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                    <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.answer', 1) }}</div>
+                                    <div class="fs-5 text-gray-600"><a href="{{isset($Faq->answer) ? $Faq->answer : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
                                   </div></a></div>
                                 </div>
                             </div>

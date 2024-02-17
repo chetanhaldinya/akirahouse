@@ -29,11 +29,9 @@
             'placeholder' => __('Upload Image '),
         ]) !!} -->
 
-        {!! Form::file('question', [
+        {!! Form::text('question',null, [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
-            'id' => 'question',
             'onchange' => 'readURL(this, question);',
-           
         ]) !!}
     </div>
     <div class="row mb-6">
@@ -47,11 +45,9 @@
             'placeholder' => __('Upload Image '),
         ]) !!} -->
 
-        {!! Form::file('answer', [
+        {!! Form::text('answer',null, [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
-            'id' => 'answer',
             'onchange' => 'readURL(this, answer);',
-         
         ]) !!}
     </div>
     <!-- <div class="col-lg-3 fv-row">

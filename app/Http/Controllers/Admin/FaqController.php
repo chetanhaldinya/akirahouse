@@ -13,7 +13,7 @@ use App\Services\UtilityService;
 
 class FaqController extends Controller
 {
-     protected $mls;
+    protected $mls;
     protected $index_view, $create_view, $edit_view, $detail_view;
     protected $index_route_name, $create_route_name, $detail_route_name, $edit_route_name;
     protected $faqService, $utilityService;
@@ -21,7 +21,7 @@ class FaqController extends Controller
     public function __construct()
     {
 
-        // $this->image_directory = 'files/banners';
+        // $this->image_directory = 'files/faqs';
         //route
         $this->index_route_name = 'admin.faqs.index';
         $this->create_route_name = 'admin.faqs.create';
@@ -73,18 +73,18 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(faqRequest $request)
-    // {
-    //     $input = $request->validated();
-    //     $image = FileService::imageUploader($request, 'image', $this->image_directory);
-    //     if ($image != null) {
-    //         $input['image'] = $image;
-    //     }
-    //     $banner = Banner::create($input);
+    public function store(faqRequest $request)
+    {
+        $input = $request->validated();
+        // $image = FileService::imageUploader($request, 'image', $this->image_directory);
+        // if ($image != null) {
+        //     $input['image'] = $image;
+        // }
+        $faq = faq::create($input);
 
-    //     return redirect()->route($this->index_route_name)
-    //         ->with('success', $this->mls->messageLanguage('created', 'banner', 1));
-    // }
+        return redirect()->route($this->index_route_name)
+            ->with('success', $this->mls->messageLanguage('created', 'faq', 1));
+    }
 
     /**
      * Display the specified resource.
@@ -115,20 +115,10 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FaqRequest $request, Faq $faq)
+    public function update(faqRequest $request, faq $faq)
     {
         $input = $request->validated();
-        if (!empty($input['image'])) {
-            $image = FileService::imageUploader($request, 'image', $this->image_directory);
-            if ($image != null) {
-                $input['image'] = $image;
-            }
-        } else {
-            $input = Arr::except($input, array('image'));
-        }
-
         $faq->update($input);
-
         return redirect()->route($this->index_route_name)
             ->with('success', $this->mls->messageLanguage('updated', 'faq', 1));
     }
@@ -139,7 +129,7 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy(faq $faq)
     {
         $result = $faq->delete();
         if ($result) {
@@ -159,7 +149,7 @@ class FaqController extends Controller
         }
     }
 
-    public function status(Faq $faq, $status)
+    public function status(faq $faq, $status)
     {
         $status = ($status == 1) ? 0 : 1;
         $result =$faq->update(['is_active' => $status]);

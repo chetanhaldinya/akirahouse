@@ -20,9 +20,8 @@
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            ['classname' => '', 'title' => trans_choice('content.question_title', 1)],
-            ['classname' => '', 'title' => trans_choice('content.answer_title', 1)],
-            <!-- ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)], -->
+            ['classname' => '', 'title' => trans_choice('question', 1)],
+            ['classname' => '', 'title' => trans_choice('answer', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
             ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
