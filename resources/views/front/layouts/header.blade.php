@@ -34,16 +34,14 @@
                                     <ul class="navigation clearfix">
                                         <li class=""><a href="{{route('front.home')}}">Home</a> </li>
                                         <li class=""><a href="{{route('front.room')}}">Rooms</a></li>
-                                        <li class="dropdown"><a href="#">pages</a>
+                                        {{-- <li class="dropdown"><a href="#">pages</a>
                                             <ul>
-                                                <li><a href="{{--route('front.about')--}}">About us</a></li>
-                                                <li><a href="services.html">Services</a></li>
+                                                <li><a href="{{route('front.about')}}">About us</a></li>
                                                 <li><a href="gallery.html">Gallery</a></li>
                                                 <li><a href="faqs.html">faqs & help's</a></li>
                                             </ul>
-                                        </li>
-                                        {{-- <li class=""><a href="#">shop</a></li> --}}
-                                        <li class=""><a href="{{route('front.blog')}}">blog</a>
+                                        </li> --}}
+                                        {{-- <li class=""><a href="{{route('front.blog')}}">blog</a> --}}
                                         </li>
                                         <li><a href="{{route('front.contact')}}">Contact</a></li>
                                     </ul>
@@ -56,18 +54,6 @@
                         <!-- Menu Button -->
                         <div class="menu-btns">
                             <a href="{{route('front.contact')}}" class="theme-btn">Book Now <i class="far fa-angle-right"></i></a>
-
-                            <button class="shopping-bag">
-                                <i class="fal fa-shopping-bag"></i>
-                                <span>0</span>
-                            </button>
-                            <!-- menu sidbar -->
-                            <div class="menu-sidebar">
-                                <button>
-                                    <img src="{{ asset('front/assets/images/icons/sidebar-toggler.png') }}"
-                                        alt="Toggler">
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>

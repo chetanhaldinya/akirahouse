@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
+use App\Models\Flat;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $home_view, $room_list, $blog_list, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
+    protected $home_view, $room_list, $room_detail, $blog_list, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
 
     public function __construct()
     {
@@ -20,6 +23,7 @@ class HomeController extends Controller
         $this->service_page = 'front.service';
         $this->gallery_page = 'front.gallery';
         $this->faq_page = 'front.faq';
+        $this->room_detail = 'front.room_detail';
     }
 
     /**
@@ -29,14 +33,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
-        return view($this->home_view);
+       $banners = Banner::where('is_active', 1)->get();
+       $flats = Flat::where('is_active', 1)->take(6)->get();
+       $testimonials = Testimonial::where('is_active', 1)->take(5)->get();
+        return view($this->home_view, compact('banners','flats','testimonials'));
     }
 
     public function rooms()
     {
-       
-        return view($this->room_list);
+        $flats = Flat::where('is_active', 1)->paginate(20);
+        return view($this->room_list, compact("flats"));
+    }
+
+    public function flat_detail($slug)
+    {
+        $flat = Flat::where('slug', $slug)->orderBy('id', 'asc')->first();
+        return view($this->room_detail, compact("flat"));
     }
 
     public function blogs()

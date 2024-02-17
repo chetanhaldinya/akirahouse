@@ -1,35 +1,47 @@
 
         <!-- Instagram Area start -->
         <section class="instagram-area">
-            <div class="instagram-item wow fadeInUp delay-0-2s">
-                <a class="instagram-gallery" href="{{asset("front/assets/images/instagrams/instagram1.jpg")}}">
-                    <img src="{{asset("front/assets/images/instagrams/instagram1.jpg")}}" alt="instagram">
+            <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
+                <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
+                    <img src="{{asset("front/assets/images/footer/instagram_1st.png")}}" alt="instagram">
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </a>
             </div>
-            <div class="instagram-item wow fadeInUp delay-0-3s">
-                <a class="instagram-gallery" href="{{asset("front/assets/images/instagrams/instagram2.jpg")}}">
-                    <img src="{{asset("front/assets/images/instagrams/instagram2.jpg")}}" alt="instagram">
+            <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
+                <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
+                    <img src="{{asset("front/assets/images/footer/instagram_2nd.png")}}" alt="instagram">
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </a>
             </div>
-            <div class="instagram-item wow fadeInUp delay-0-4s">
-                <div class="content text-white">
-                    <div class="icon"><i class="fab fa-instagram"></i></div>
-                    <h2><a href="https://www.instagram.com">Follow Our Instagram</a></h2>
-                    <hr>
-                    <div class="call-text">Make A Call</div>
-                    <a class="h2" href="callto:+000(123)45688">+000 (123) 456 88</a>
-                </div>
-            </div>
-            <div class="instagram-item wow fadeInUp delay-0-5s">
-                <a class="instagram-gallery" href="{{asset("front/assets/images/instagrams/instagram3.jpg")}}">
-                    <img src="{{asset("front/assets/images/instagrams/instagram3.jpg")}}" alt="instagram">
+            <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
+                <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
+                    <img src="{{asset("front/assets/images/footer/instagram_3rd.png")}}" alt="instagram">
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </a>
             </div>
-            <div class="instagram-item wow fadeInUp delay-0-6s">
-                <a class="instagram-gallery" href="{{asset("front/assets/images/instagrams/instagram4.jpg")}}">
-                    <img src="{{asset("front/assets/images/instagrams/instagram4.jpg")}}" alt="instagram">
+            <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
+                <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
+                    <img src="{{asset("front/assets/images/footer/instagram_4th.png")}}" alt="instagram">
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </a>
             </div>
+            <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
+                <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
+                    <img src="{{asset("front/assets/images/footer/instagram_5th.png")}}" alt="instagram">
+                    <div class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            
         </section>
         <!-- Instagram Area end -->
         
@@ -41,7 +53,7 @@
                     <div class="col-xl-3 col-lg-5 col-sm-6">
                         <div class="footer-widget widget_about wow fadeInUp delay-0-2s">
                             <div class="footer-logo mb-25">
-                                <a href="index.html"><img src="{{asset("front/assets/images/logos/logo.png")}}" alt="Logo"></a>
+                                <a href="{{url('/')}}"><img src="{{ $logo_img }}" style="width: 80px;" alt="Logo"></a>
                             </div>
                             <p>Nam libero tempore cum soluta nobis eseligendi optio cumque nihile impedit quo minus maxime placeat facere</p>
                             <div class="social-style-one pt-10">
@@ -57,9 +69,7 @@
                             <h4 class="footer-title">Quick Links</h4>
                             <ul class="list-style-one">
                                 <li><a href="about.html">About company</a></li>
-                                <li><a href="about.html">History</a></li>
                                 <li><a href="about.html">Team Member</a></li>
-                                <li><a href="blog.html">Latest News</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
@@ -68,21 +78,10 @@
                         <div class="footer-widget widget_nav_menu wow fadeInUp delay-0-4s">
                             <h4 class="footer-title">Features</h4>
                             <ul class="list-style-one">
-                                <li><a href="room-details.html">Free Transportation</a></li>
-                                <li><a href="room-details.html">GYM & Fitness Care</a></li>
-                                <li><a href="room-details.html">SPA Treatment</a></li>
-                                <li><a href="room-details.html">Food & Drinks</a></li>
-                                <li><a href="room-details.html">Breakfast</a></li>
+                                <li><a href="javascript::void();">Wifi</li>
+                                <li><a href="javascript::void();">...</a></li>
+                                <li><a href="javascript::void();">...</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="footer-widget widget_newsletter wow fadeInUp delay-0-6s">
-                            <h4 class="footer-title">Newsletter</h4>
-                            <form action="#">
-                                <input type="email" placeholder="Enter Address" required>
-                                <button class="theme-btn">Subscribe <i class="far fa-angle-right"></i></button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -92,7 +91,7 @@
                    <div class="row">
                        <div class="col-lg-6">
                             <div class="copyright-text">
-                                <p>© 2023 <a href="index.html">Qomfort.</a> All Rights Reserved.</p>
+                                <p>© 2024 <a href="index.html">AkiraHomes.</a> All Rights Reserved.</p>
                             </div>
                        </div>
                        <div class="col-lg-6 text-lg-end">
@@ -100,7 +99,6 @@
                                <li><a href="about.html">Terms</a></li>
                                <li><a href="about.html">Privacy Policy</a></li>
                                <li><a href="faqs.html">FAQs</a></li>
-                               <li><a href="about.html">Cookie Policy</a></li>
                            </ul>
                        </div>
                    </div>

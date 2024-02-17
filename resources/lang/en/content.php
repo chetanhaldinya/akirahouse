@@ -104,6 +104,7 @@ return [
         'customer' => 'Customer|Customers',
         'product' => 'Product|Products',
         'page_content' => 'Page Contents',
+        'faq' => 'Faq|Faqs',
     ),
 
 

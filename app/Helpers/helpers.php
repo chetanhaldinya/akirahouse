@@ -501,6 +501,10 @@ function statusArray()
     return $data;
 }
 
+function currencyIcon(){
+    return env('CURRENCY_ICON') ? env('CURRENCY_ICON') : "₹";
+}
+
 function getStatus($status)
 {
     if($status == 1){
@@ -509,5 +513,14 @@ function getStatus($status)
         $data = 'Inactive';
     }
     return $data;
+}
+
+function setStringLength($string_value, $length = 20)
+{
+    if (!isset($string_value) || $string_value == null) {
+        return "Na";
+    } else {
+        return (strlen($string_value) > $length) ? substr($string_value, 0, $length - strlen('...')) . '....' : $string_value;
+    }
 }
 
