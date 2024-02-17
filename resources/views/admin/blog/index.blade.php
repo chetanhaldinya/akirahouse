@@ -3,23 +3,26 @@
 @section('content')
     @include('admin.layouts.components.header', [
         'title' => __('messages.list', [
-            'name' => trans_choice('content.faq', 2),
+            'name' => trans_choice('content.blog', 2),
         ]),
-        'breadcrumbs' => Breadcrumbs::render('admin.faqs.index'),
+        'breadcrumbs' => Breadcrumbs::render('admin.blogs.index'),
         'filter' => false,
         'create_btn' => [
             'status' => true,
-            'route' => route('admin.faqs.create'),
+            'route' => route('admin.blogs.create'),
             'name' => __('messages.create', [
-                'name' => trans_choice('content.faq', 2),
+                'name' => trans_choice('content.blog', 2),
             ]),
         ],
     ])
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            ['classname' => 'min-w-150px', 'title' => trans_choice('content.question', 1)],
-            ['classname' => 'min-w-150px', 'title' => trans_choice('content.answer', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.meta_title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.description', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.meta_description', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
             ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
             ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
@@ -54,7 +57,7 @@
                     $(row).find("td").last().addClass('text-danger');
                 },
                 ajax: {
-                    "url": "{{ route('admin.faqs.index') }}",
+                    "url": "{{ route('admin.blogs.index') }}",
                     data: function(d) {
                         d.name = $('input[name=name]').val();
                         d.status = $('select[name=status]').val();
@@ -64,7 +67,7 @@
                       "<'row'<'col-sm-12'tr>>" +
                       "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
                 columnDefs: [{
-                    targets: [4],
+                    targets: [8],
                     orderable: false,
                     searchable: false,
                     // className: 'mdl-data-table__cell--non-numeric'
@@ -78,28 +81,43 @@
                         }
                     },
                     {
-                        data: 'question',
-                        name: 'question',
+                        data: 'title',
+                        name: 'title',
                         render: function(data, type, row, meta) {
                             return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
                         }
                     },
                     {
-                        data: 'answer',
-                        name: 'answer',
+                        data: 'meta_title',
+                        name: 'meta_title',
                         render: function(data, type, row, meta) {
-                            return return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
                         }
                     },
-                    // {
-                    //     data: 'image',
-                    //     name: 'image',
-                    //     render: function(data, type, row, meta) {
-                    //         return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                    //                       <img src="${data}" height="150px" width="350px" alt="faq image">
-                    //                 </div></a> `;
-                    //     }
-                    // },
+
+                    {
+                        data: 'image',
+                        name: 'image',
+                        render: function(data, type, row, meta) {
+                            return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                          <img src="${data}" height="150px" width="350px" alt="blog image">
+                                    </div></a> `;
+                        }
+                    },
+                    {
+                        data: 'description',
+                        name: 'description',
+                        render: function(data, type, row, meta) {
+                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                        }
+                    },
+                    {
+                        data: 'meta_description',
+                        name: 'meta_description',
+                        render: function(data, type, row, meta) {
+                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                        }
+                    },
                     {
                         data: 'is_active',
                         name: 'is_active',
@@ -122,9 +140,9 @@
                         // visible:false,
                         render: function(data, type, row, meta) {
 
-                            var edit_url = `{{ url('/') }}/admin/faqs/` + row['id'] +
+                            var edit_url = `{{ url('/') }}/admin/blogs/` + row['id'] +
                                 `/edit/?tab=edit`;
-                            var show_url = `{{ url('/') }}/admin/faqs/` + row['id'] +
+                            var show_url = `{{ url('/') }}/admin/blogs/` + row['id'] +
                                 `?tab=details`;
                             var edit_data = actionEditButton(edit_url, row['id']);
                             var show_data = actionShowButton(show_url);
@@ -139,7 +157,7 @@
         $(document).on('click', '.clsstatus', function() {
             var id = $(this).attr('data-id');
             var status = $(this).attr('data-status');
-            var url = `{{ url('/') }}/admin/faqs/status/` + id + `/` + status;
+            var url = `{{ url('/') }}/admin/blogs/status/` + id + `/` + status;
             tableChnageStatus(url, oTable);
         });
     </script>

@@ -104,7 +104,8 @@ return [
         'customer' => 'Customer|Customers',
         'product' => 'Product|Products',
         'page_content' => 'Page Contents',
-        'faq' =>"Faq|faq's",
+        'faq' =>"Faq|Faq's",
+        'blog' =>"Blog|Blog's",
     ),
 
 
@@ -216,7 +217,11 @@ return [
     'content' => 'Content',
     'team' => 'Team|Teams',
     'position' => 'Position|Positions',
-    'faq' => "Faq|Faq's",
+    'faq' => "Faq|Faqs",
     'question' =>"Question|Questions",
     'answer' =>"Answer|Answers",
+    'blog' => "Blog|Blogs",
+    'meta_description' => "Meta Description",
+    'meta_title' => "Meta Title",
+    'description' => "Description",
 ];

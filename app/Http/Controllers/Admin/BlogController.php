@@ -4,35 +4,35 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\FaqRequest;
-use App\Models\Faq;
+use App\Http\Requests\Admin\BlogRequest;
+use App\Models\Blog;
 use App\Services\FileService;
 use Illuminate\Support\Arr;
 use App\Services\ManagerLanguageService;
 use App\Services\UtilityService;
 
-class FaqController extends Controller
+class BlogController extends Controller
 {
-    protected $mls;
+    protected $mls, $image_directory;
     protected $index_view, $create_view, $edit_view, $detail_view;
     protected $index_route_name, $create_route_name, $detail_route_name, $edit_route_name;
-    protected $faqService, $utilityService;
+    protected $bannerService, $utilityService;
 
     public function __construct()
     {
 
-        // $this->image_directory = 'files/faqs';
+        $this->image_directory = 'files/blogs';
         //route
-        $this->index_route_name = 'admin.faqs.index';
-        $this->create_route_name = 'admin.faqs.create';
-        $this->detail_route_name = 'admin.faqs.show';
-        $this->edit_route_name = 'admin.faqs.edit';
+        $this->index_route_name = 'admin.blogs.index';
+        $this->create_route_name = 'admin.blogs.create';
+        $this->detail_route_name = 'admin.blogs.show';
+        $this->edit_route_name = 'admin.blogs.edit';
 
         //view files
-        $this->index_view = 'admin.faq.index';
-        $this->create_view = 'admin.faq.create';
-        $this->detail_view = 'admin.faq.details';
-        $this->edit_view = 'admin.faq.edit';
+        $this->index_view = 'admin.blog.index';
+        $this->create_view = 'admin.blog.create';
+        $this->detail_view = 'admin.blog.details';
+        $this->edit_view = 'admin.blog.edit';
 
         //service files
         $this->utilityService = new UtilityService();
@@ -49,7 +49,7 @@ class FaqController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $items = Faq::query();
+            $items = Blog::query();
             return datatables()->eloquent($items)->toJson();
         } else {
             return view($this->index_view);
@@ -73,17 +73,17 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FaqRequest $request)
+    public function store(BlogRequest $request)
     {
         $input = $request->validated();
-        // $image = FileService::imageUploader($request, 'image', $this->image_directory);
-        // if ($image != null) {
-        //     $input['image'] = $image;
-        // }
-        $faq = Faq::create($input);
+        $image = FileService::imageUploader($request, 'image', $this->image_directory);
+        if ($image != null) {
+            $input['image'] = $image;
+        }
+        $banner = Blog::create($input);
 
         return redirect()->route($this->index_route_name)
-            ->with('success', $this->mls->messageLanguage('created', 'faq', 1));
+            ->with('success', $this->mls->messageLanguage('created', 'blog', 1));
     }
 
     /**
@@ -92,9 +92,9 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Faq $faq)
+    public function show(Blog $blog)
     {
-        return view($this->detail_view, compact('faq'));
+        return view($this->detail_view, compact('blog'));
     }
 
     /**
@@ -103,9 +103,9 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit(Blog $blog)
     {
-        return view($this->edit_view, compact('faq'));
+        return view($this->edit_view, compact('blog'));
     }
 
     /**
@@ -115,12 +115,22 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FaqRequest $request, Faq $faq)
+    public function update(BlogRequest $request, Blog $blog)
     {
         $input = $request->validated();
-        $faq->update($input);
+        if (!empty($input['image'])) {
+            $image = FileService::imageUploader($request, 'image', $this->image_directory);
+            if ($image != null) {
+                $input['image'] = $image;
+            }
+        } else {
+            $input = Arr::except($input, array('image'));
+        }
+
+        $banner->update($input);
+
         return redirect()->route($this->index_route_name)
-            ->with('success', $this->mls->messageLanguage('updated', 'faq', 1));
+            ->with('success', $this->mls->messageLanguage('updated', 'blog', 1));
     }
 
     /**
@@ -129,30 +139,30 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy(Blog $blog)
     {
-        $result = $faq->delete();
+        $result = $blog->delete();
         if ($result) {
             return response()->json([
                 'status' => 1,
                 'title' => $this->mls->onlyNameLanguage('deleted_title'),
-                'message' => $this->mls->onlyNameLanguage('faq'),
+                'message' => $this->mls->onlyNameLanguage('blog'),
                 'status_name' => 'success'
             ]);
         } else {
             return response()->json([
                 'status' => 0,
                 'title' => $this->mls->onlyNameLanguage('deleted_title'),
-                'message' => $this->mls->onlyNameLanguage('faq'),
+                'message' => $this->mls->onlyNameLanguage('blog'),
                 'status_name' => 'error'
             ]);
         }
     }
 
-    public function status(Faq $faq, $status)
+    public function status(Blog $blog, $status)
     {
         $status = ($status == 1) ? 0 : 1;
-        $result =$faq->update(['is_active' => $status]);
+        $result =$banner->update(['is_active' => $status]);
         if ($result) {
             return response()->json([
                 'status' => 1,

@@ -98,6 +98,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/faqs/status/{faq}/{status}', 'FaqController@status');
         Route::resource('faqs', FaqController::class);
 
+        //Admin Blog
+        Route::get('/blogs/status/{blog}/{status}', 'BlogController@status');
+        Route::resource('blogs', BlogController::class);
+
         //Admin Flat
         Route::get('/flats/status/{flat}/{status}', 'FlatController@status');
         Route::resource('flats', FlatController::class);
