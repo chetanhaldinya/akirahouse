@@ -18,14 +18,14 @@
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.title', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.meta_title', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.description', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.meta_description', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
-            ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
-            ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.title', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.meta_title', 1)],
+            ['classname' => 'min-w-0px', 'title' => trans_choice('content.image', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.description', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.meta_description', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.status_title', 1)],
+            ['classname' => 'min-w-65px', 'title' => trans_choice('content.joined_date_title', 1)],
+            ['classname' => 'min-w-60px', 'title' => trans_choice('content.action_title', 1)],
         ],
     ])
 @endsection
@@ -100,7 +100,7 @@
                         name: 'image',
                         render: function(data, type, row, meta) {
                             return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                          <img src="${data}" height="150px" width="350px" alt="blog image">
+                                          <img src="${data}" height="150px" width="100px" alt="blog image">
                                     </div></a> `;
                         }
                     },
