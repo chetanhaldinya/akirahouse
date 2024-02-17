@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FaqRequest extends FormRequest
+class BlogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,17 +23,24 @@ class FaqRequest extends FormRequest
      */
     public function rules()
     {
-        if (!request()->is('admin/faqs/create')) {
+        if (!request()->is('admin/blogs/create')) {
             return [
                 'is_active' => 'required',
-                'question' => 'required',
-                'answer' => 'required',
+                'title' => 'required',
+                'meta_title' => 'required',
+                'image' => 'nullable|image',
+                'description' => 'required',
+                'meta_description' => 'required',
+
             ];
         } else {
             return [
                 'is_active' => 'required',
-                'question' => 'required',
-                'answer' => 'required',
+                'title' => 'required',
+                'meta_title' => 'required',
+                'image' => 'nullable|image',
+                'description' => 'required',
+                'meta_description' => 'required',
             ];
         }
     }

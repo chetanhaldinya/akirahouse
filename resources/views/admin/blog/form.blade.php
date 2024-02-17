@@ -17,8 +17,28 @@
         <!--end::Col-->
     </div>
     <!--end::Input group-->
+    <div class="row mb-6">
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.title', 1) }}</label>
+        <div class="col-lg-7 fv-row">
+        {!! Form::text('title', null, [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'onchange' => 'readURL(this, title);',
+            'placeholder' => __('Enter Your Title'),
+        ]) !!}
+    </div>
+        </div>
+        <div class="row mb-6">
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.meta_title', 1) }}</label>
+        <div class="col-lg-7 fv-row">
+        {!! Form::text('meta_title', null, [
+            'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
+            'onchange' => 'readURL(this, meta_title);',
+            'placeholder' => __('Enter Your Meta Title'),
+        ]) !!}
+    </div>
+        </div>
 
-    {{-- <div class="row mb-6">
+    <div class="row mb-6">
         <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.image', 1) }}(1765px * 776px)</label>
         <div class="col-lg-7 fv-row">
         {!! Form::file('image', [
@@ -30,36 +50,33 @@
         ]) !!}
     </div>
     <div class="col-lg-3 fv-row">
-            @if (isset($faq->image))
-                <img id="backImage_image" width="80px" height="80px" src="{{ $faq->image }}" title="Image">
+            @if (isset($blog->image))
+                <img id="backImage_image" width="80px" height="80px" src="{{ $blog->image }}" title="Image">
                 @else
                 <img id="backImage_image" src="{{blankImageUrl()}}" width="80px" height="80px" title="Image">
             @endif
         </div>
-    </div> --}}
-
-
+    </div>
     <div class="row mb-6">
-        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.question', 1) }}</label>
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.description', 1) }}</label>
         <div class="col-lg-7 fv-row">
-        {!! Form::text('question',null, [
+        {!! Form::text('description', null, [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
-            'onchange' => 'readURL(this, question);',
-            'placeholder' => __('Upload question '),
+            'onchange' => 'readURL(this, description);',
+            'placeholder' => __('Enter Your Description '),
         ]) !!}
     </div>
-    </div>
-
-    <div class="row mb-6">
-        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.answer', 1) }}</label>
+        </div>
+        <div class="row mb-6">
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.meta_description', 1) }}</label>
         <div class="col-lg-7 fv-row">
-        {!! Form::text('answer',null, [
+        {!! Form::text('meta_description', null, [
             'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
-            'onchange' => 'readURL(this, answer);',
-            'placeholder' => __('Upload answer '),
+            'onchange' => 'readURL(this, meta_description);',
+            'placeholder' => __('Enter Your Meta Description '),
         ]) !!}
     </div>
-    </div>
+        </div>
     <!--end::Card body-->
 </div>
 

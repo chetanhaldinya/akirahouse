@@ -6,14 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FaqRequest;
 use App\Models\Faq;
-use App\Services\FileService;
-use Illuminate\Support\Arr;
 use App\Services\ManagerLanguageService;
 use App\Services\UtilityService;
 
 class FaqController extends Controller
 {
-    protected $mls, $image_directory;
+    protected $mls;
     protected $index_view, $create_view, $edit_view, $detail_view;
     protected $index_route_name, $create_route_name, $detail_route_name, $edit_route_name;
     protected $faqService, $utilityService;
@@ -21,7 +19,7 @@ class FaqController extends Controller
     public function __construct()
     {
 
-        $this->image_directory = 'files/faqs';
+        // $this->image_directory = 'files/faqs';
         //route
         $this->index_route_name = 'admin.faqs.index';
         $this->create_route_name = 'admin.faqs.create';
@@ -76,12 +74,7 @@ class FaqController extends Controller
     public function store(FaqRequest $request)
     {
         $input = $request->validated();
-        $image = FileService::imageUploader($request, 'image', $this->image_directory);
-        if ($image != null) {
-            $input['image'] = $image;
-        }
         $faq = Faq::create($input);
-
         return redirect()->route($this->index_route_name)
             ->with('success', $this->mls->messageLanguage('created', 'faq', 1));
     }
@@ -118,17 +111,7 @@ class FaqController extends Controller
     public function update(FaqRequest $request, Faq $faq)
     {
         $input = $request->validated();
-        if (!empty($input['image'])) {
-            $image = FileService::imageUploader($request, 'image', $this->image_directory);
-            if ($image != null) {
-                $input['image'] = $image;
-            }
-        } else {
-            $input = Arr::except($input, array('image'));
-        }
-
         $faq->update($input);
-
         return redirect()->route($this->index_route_name)
             ->with('success', $this->mls->messageLanguage('updated', 'faq', 1));
     }
