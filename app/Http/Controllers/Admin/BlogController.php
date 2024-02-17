@@ -103,7 +103,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $Blog)
+    public function edit(Blog $blog)
     {
         return view($this->edit_view, compact('blog'));
     }
