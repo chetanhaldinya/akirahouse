@@ -36,11 +36,11 @@ class BlogRequest extends FormRequest
         } else {
             return [
                 'is_active' => 'required',
-                'title' => 'required|required',
-                'meta_title' => 'required|meta_title',
+                'title' => 'required',
+                'meta_title' => 'required',
                 'image' => 'required|image',
-                'description' => 'required|description',
-                'meta_description' => 'required|meta_description',
+                'description' => 'required',
+                'meta_description' => 'required',
                 
             ];
         }

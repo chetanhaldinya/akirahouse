@@ -75,11 +75,7 @@ class FaqController extends Controller
      */
     public function store(faqRequest $request)
     {
-        $input = $request->validated();
-        // $image = FileService::imageUploader($request, 'image', $this->image_directory);
-        // if ($image != null) {
-        //     $input['image'] = $image;
-        // }
+       
         $faq = faq::create($input);
 
         return redirect()->route($this->index_route_name)

@@ -2,7 +2,7 @@
 @section('content')
     @include('admin.layouts.components.header', [
         'title' => __('messages.detail', ['name' => trans_choice('content.blog', 1)]),
-        'breadcrumbs' => Breadcrumbs::render('admin.page-contents.show'),
+        'breadcrumbs' => Breadcrumbs::render('admin.blogs.show'),
     ])
 
     <!--begin::Post-->

@@ -80,16 +80,7 @@
                         }
                     },
 
-                    // {
-                    //     data: 'image',
-                    //     name: 'image',
-                    //     render: function(data, type, row, meta) {
-                    //         return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                    //                       <img src="${data}" height="150px" width="350px" alt="Faq image">
-                    //                 </div></a> `;
-                    //     }
-                    // },
-
+                  
                     {
                          data: 'question',
                          name: 'question',

@@ -63,5 +63,5 @@
 
 @push('scripts')
     <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
-    {!! JsValidator::formRequest('App\Http\Requests\Admin\PageContentRequest', 'form') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\Admin\FaqRequest', 'form') !!}
 @endpush
