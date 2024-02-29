@@ -3,32 +3,32 @@
 @section('content')
     @include('admin.layouts.components.header', [
         'title' => __('messages.list', [
-            'name' => trans_choice('content.blog', 2),
+            'name' => trans_choice('content.image', 2),
         ]),
-        'breadcrumbs' => Breadcrumbs::render('admin.blogs.index'),
+        'breadcrumbs' => Breadcrumbs::render('admin.images.index'),
         'filter' => false,
         'create_btn' => [
             'status' => true,
-            'route' => route('admin.blogs.create'),
+            'route' => route('admin.images.create'),
             'name' => __('messages.create', [
-                'name' => trans_choice('content.blog', 2),
+                'name' => trans_choice('content.image', 2),
             ]),
         ],
     ])
     @include('admin.layouts.components.datatable_header', [
         'data' => [
             ['classname' => '', 'title' => trans_choice('content.id_title', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.title', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.meta_title', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.image', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.description', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.meta_description', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.status_title', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.joined_date_title', 1)],
-            ['classname' => 'min-w-75px', 'title' => trans_choice('content.action_title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.description', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.image', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.other_images', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.status_title', 1)],
+            ['classname' => 'min-w-125px', 'title' => trans_choice('content.joined_date_title', 1)],
+            ['classname' => 'min-w-100px', 'title' => trans_choice('content.action_title', 1)],
         ],
     ])
-@endsection
+@endsection 
+
 @push('scripts')
     <script>
         var oTable;
@@ -39,7 +39,7 @@
                 processing: true,
                 serverSide: true,
                 order: [
-                    [0, 'desc']
+                    [6, 'desc']
                 ],
                 language: {
                     search: "_INPUT_",
@@ -56,7 +56,7 @@
                     $(row).find("td").last().addClass('text-danger');
                 },
                 ajax: {
-                    "url": "{{ route('admin.blogs.index') }}",
+                    "url": "{{ route('admin.images.index') }}",
                     data: function(d) {
                         d.name = $('input[name=name]').val();
                         d.status = $('select[name=status]').val();
@@ -66,7 +66,7 @@
                       "<'row'<'col-sm-12'tr>>" +
                       "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
                 columnDefs: [{
-                    targets: [8],
+                    targets: [7],
                     orderable: false,
                     searchable: false,
                     // className: 'mdl-data-table__cell--non-numeric'
@@ -75,46 +75,47 @@
                         data: 'id',
                         name: 'id',
                         render: function(data, type, row, meta) {
-                            return data;
-                            // return "#" + serialNumberShow(meta);
+                            return "#" + serialNumberShow(meta);
                         }
                     },
                     {
                         data: 'title',
                         name: 'title',
                         render: function(data, type, row, meta) {
-                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
-                        }
-                    },
-                    {
-                        data: 'meta_title',
-                        name: 'meta_title',
-                        render: function(data, type, row, meta) {
-                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
-                        }
-                    },
-
-                    {
-                        data: 'image',
-                        name: 'image',
-                        render: function(data, type, row, meta) {
-                            return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                          <img src="${data}" height="150px" width="100px" alt="blog image">
-                                    </div></a> `;
+                            if (data) {
+                                return `<div class="font-medium whitespace-no-wrap">${setStringLength(data)}</div>`;
+                            } else {
+                                return `<div class="font-medium whitespace-no-wrap">Na</div>`;
+                            }
                         }
                     },
                     {
                         data: 'description',
                         name: 'description',
                         render: function(data, type, row, meta) {
-                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                            if (data) {
+                                return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                            } else {
+                                return `<div class="font-medium whitespace-no-wrap">Na</div>`;
+                            }
                         }
                     },
                     {
-                        data: 'meta_description',
-                        name: 'meta_description',
+                        data: 'image',
+                        name: 'image',
                         render: function(data, type, row, meta) {
-                            return `<div class="font-medium whitespace-no-wrap">${data}</div>`;
+                                return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                          <img src="${data}" height="150px" width="100px" alt="blog image">
+                                    </div></a> `;
+                        }
+                    },
+                    {
+                        data: 'other_images',
+                        name: 'other_images',
+                        render: function(data, type, row, meta) {
+                                return `<a href="${data}" target="_blank"><div class="font-medium whitespace-no-wrap">
+                                          <img src="${data}" height="150px" width="100px" alt="blog image">
+                                    </div></a> `;
                         }
                     },
                     {
@@ -129,6 +130,7 @@
                     {
                         data: 'created_at',
                         name: 'created_at',
+                          visible:false,
                         render: function(data, type, row, meta) {
                             return getDateTimeByFormat(data);
                         }
@@ -136,16 +138,17 @@
                     {
                         data: 'id',
                         name: 'id',
-                        // visible:false,
+                      
                         render: function(data, type, row, meta) {
 
-                            var edit_url = `{{ url('/') }}/admin/blogs/` + row['id'] +
+                            var edit_url = `{{ url('/') }}/admin/images/` + row['id'] +
                                 `/edit/?tab=edit`;
-                            var show_url = `{{ url('/') }}/admin/blogs/` + row['id'] +
+                            var show_url = `{{ url('/') }}/admin/images/` + row['id'] +
                                 `?tab=details`;
                             var edit_data = actionEditButton(edit_url, row['id']);
                             var show_data = actionShowButton(show_url);
-                            return `<div class="flex justify-left items-center">${show_data} ${edit_data} </div>`;
+                             var del_data = actionDeleteButton(row['id']);
+                            return `<div class="flex justify-left items-center">${show_data} ${edit_data} ${del_data}</div>`;
 
                         }
                     },
@@ -156,8 +159,14 @@
         $(document).on('click', '.clsstatus', function() {
             var id = $(this).attr('data-id');
             var status = $(this).attr('data-status');
-            var url = `{{ url('/') }}/admin/blogs/status/` + id + `/` + status;
+            var url = `{{ url('/') }}/admin/images/status/` + id + `/` + status;
             tableChnageStatus(url, oTable);
+        });
+        $(document).on('click', '.clsdelete', function() {
+            var id = $(this).attr('data-id');
+            var e = $(this).parent().parent();
+            var url = `{{ url('/') }}/admin/images/` + id;
+            tableDeleteRow(url, oTable);
         });
     </script>
 

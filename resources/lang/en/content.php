@@ -106,6 +106,7 @@ return [
         'page_content' => 'Page Contents',
         'faq' =>"Faq|Faq's",
         'blog' =>"Blog|Blog's",
+        'image' => "Image|Image's",
     ),
 
 
@@ -224,4 +225,5 @@ return [
     'meta_description' => "Meta Description",
     'meta_title' => "Meta Title",
     'description' => "Description",
+    'image' => "Image|Images",
 ];
