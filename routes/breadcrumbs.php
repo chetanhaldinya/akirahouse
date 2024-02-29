@@ -145,5 +145,6 @@ Breadcrumbs::resource('flats', $mls->messageLanguage('only_name', 'flat', 2));
 Breadcrumbs::resource('galleries', "Gallery");
 Breadcrumbs::resource('faqs', "Faq");
 Breadcrumbs::resource('blogs', "Blog");
+Breadcrumbs::resource('photos', "Photo");
     
 

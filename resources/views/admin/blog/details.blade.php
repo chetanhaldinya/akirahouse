@@ -48,7 +48,7 @@
                                 <div class="col-md-6 fv-row">
                                     <div class="fs-5 fw-bold mb-2">{{ trans_choice('content.image_title', 1) }}</div>
                                     <div class="fs-5 text-gray-600"><a href="{{isset($blog->image) ? $blog->image : 'Na'}}" target="_blank"><div class="font-medium whitespace-no-wrap">
-                                        <img src="{{isset($blog->image) ? $blog->image : 'Na'}}" height="150px" width="350px" alt="Banner image">
+                                        <img src="{{isset($blog->image) ? $blog->image : 'Na'}}" height="150px" width="350px" alt="blog image">
                                   </div></a></div>
                                 </div>
                             </div>

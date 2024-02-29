@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogRequest extends FormRequest
+class PhotoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,26 +23,21 @@ class BlogRequest extends FormRequest
      */
     public function rules()
     {
-        if (!request()->is('admin/blogs/create')) {
+        if (!request()->is('admin/photos/create')) {
             return [
-                'is_active' => 'required',
-                'title' => 'required',
-                'meta_title' => 'required',
+                'title' => 'required|alpha_spaces|max:50|unique:photos,title,' .request()->id,
+                'description' => 'required|min:10',
                 'image' => 'nullable|image',
-                'description' => 'required',
-                'meta_description' => 'required',
-                
-            ];
-        } 
-        else {
-            return [
                 'is_active' => 'required',
-                'title' => 'required',
-                'meta_title' => 'required',
-                'image' => 'required|image',
-                'description' => 'required',
-                'meta_description' => 'required',
-                
+                'other_images' => 'nullable|max:10',
+            ];
+        } else {
+            return [
+                'title' => 'required|alpha_spaces|max:50|unique:photos,title',   
+                'description' => 'required|min:10',
+                'image' => 'nullable|image',
+                'is_active' => 'required',
+                'other_images' => 'nullable|max:10',
             ];
         }
     }
