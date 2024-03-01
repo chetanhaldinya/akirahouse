@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 // use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Front\HomeController;
-
+use App\Http\Controllers\Admin\RoomController;
 // use App\Models\Faq;
 
 /*
@@ -58,6 +58,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::patch('change-password/{user}', 'updatePassword')->name('update.password');
         });
 
+        
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
 
@@ -110,6 +111,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         //Admin Flat
         Route::get('/flats/status/{flat}/{status}', 'FlatController@status');
         Route::resource('flats', FlatController::class);
+
+        //Admin Room
+        Route::get('/rooms/status/{room}/{status}', 'RoomController@status');
+        Route::resource('rooms', RoomController::class);
 
         //testimonials routes
         Route::controller(TestimonialController::class)->group(function () {

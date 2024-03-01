@@ -149,3 +149,4 @@ Breadcrumbs::resource('teams', $mls->messageLanguage('only_name', 'team', 2));
 Breadcrumbs::resource('galleries', "Gallery");
 Breadcrumbs::resource('faqs', "Faq");
 Breadcrumbs::resource('blogs', "blog");
+Breadcrumbs::resource('rooms', "room");

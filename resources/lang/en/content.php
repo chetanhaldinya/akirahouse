@@ -199,6 +199,7 @@ return [
     'image' => 'Image|Images',
     'is_active' => 'Status',
     'flat' => 'Flat|Flats',
+    'room' => 'Room|Rooms',
     'title' => 'Title',
     'size' => 'Size',
     'bed_room' => 'Bed Room|Bed Rooms',
@@ -223,6 +224,7 @@ return [
     'meta_title' => 'Meta_title',
     'description' => 'Description',
     'meta_description' => 'Meta_description',
+
 
 
 ];
