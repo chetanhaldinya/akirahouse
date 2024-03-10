@@ -9,7 +9,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center wow fadeInUp delay-0-4s">
                         <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                        <li class="breadcrumb-item active">Contact</li>
+                        <li class="breadcrumb-item active">List Your Property</li>
                     </ol>
                 </nav>
             </div>
@@ -113,7 +113,7 @@
                             'id' => 'contactUsForm',
                             'enctype' => 'multipart/form-data',
                         ]) !!}
-                        <input type="hidden" name="type" class="form-control" value="customer">
+                        <input type="hidden" name="type" class="form-control" value="partner">
                         <div class="row gap-20 pt-15">
                             <div class="col-md-6">
                                 <div class="form-group">

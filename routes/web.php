@@ -21,6 +21,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/rooms', 'rooms')->name('front.room');
     Route::get('/blogs', 'blogs')->name('front.blog');
     Route::get('/contact-us', 'contact')->name('front.contact');
+    Route::get('/connect-with-us', 'connect')->name('front.connect');
+    Route::post('/contact-us', 'contactUsStore')->name('front.contact-us.store');
     Route::get('/about-us', 'about')->name('front.about');
     Route::get('/services', 'service')->name('front.service');
     Route::get('/galleries', 'gallery')->name('front.gallery');
@@ -124,5 +126,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         //start::Gallery manager
         Route::resource('/galleries', GalleryController::class)->only('index', 'store', 'destroy');
         //end::Gallery manager
+
+        Route::get('/contact-us/status/{id}/{status}', 'ContactUsController@status');
+        Route::resource('contact-us', ContactUsController::class)->only(['index', 'show']);
+        
     });
 });

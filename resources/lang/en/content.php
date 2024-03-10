@@ -124,7 +124,7 @@ return [
     'id_title' => 'ID',
     'name_title' => 'Name|Names',
     'email_title' => 'Email|Emails',
-    'phone_title' => 'Phone Numbers|Phone Numbers',
+    'phone_title' => 'Phone Number|Phone Numbers',
     'description_title' => 'Description|Descriptions',
     'image_title' => 'Image|Images',
     'status_title' => 'Status',
@@ -217,4 +217,8 @@ return [
     'blog' => 'Blog|Blogs',
     'status' => 'Status|Status',
     'description' => 'Description|Description',
+    'contact_us' => 'Contact Us',
+    'subject_title' => 'Subject',
+    'subject' => 'Subject',
+    'created_at' => 'Created at',
 ];

@@ -17,10 +17,13 @@
                                     <div class="mobile-logo my-15">
                                         <a href="index.html">
                                             <img src="{{ $logo_img }}" style="width: 80px;" alt="Logo"
-                                                title="Logo">
+                                            title="Logo">
                                         </a>
                                     </div>
-
+                                    
+                                    <li class="nav-item custom_navigation">
+                                        <a class="nav-link" href="{{route('front.connect')}}" style="color: #fff;font-size: 20px;background: #ab6034c7;margin-right: 10px;border: 1px solid #ab6034;border-radius: 10px;border-style: outset;">List Your Property</a>
+                                      </li>
                                     <!-- Toggle Button -->
                                     <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
                                         data-bs-target=".navbar-collapse">
@@ -44,16 +47,17 @@
                                         {{-- <li class=""><a href="{{route('front.blog')}}">blog</a> --}}
                                         </li>
                                         <li><a href="{{route('front.contact')}}">Contact</a></li>
+                                        <li><a href="{{route('front.connect')}}">List Your Property</a></li>
                                     </ul>
                                 </div>
 
                             </nav>
                             <!-- Main Menu End-->
                         </div>
-
+                        
                         <!-- Menu Button -->
                         <div class="menu-btns">
-                            <a href="{{route('front.contact')}}" class="theme-btn">Book Now <i class="far fa-angle-right"></i></a>
+                            <a href="{{route('front.room')}}" class="theme-btn">Book Now <i class="far fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

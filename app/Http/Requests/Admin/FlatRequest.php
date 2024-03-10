@@ -37,6 +37,7 @@ class FlatRequest extends FormRequest
                 'long_description' => 'required|min:10',
                 'is_active' => 'required',
                 'other_images' => 'nullable|max:10',
+                'location' => 'required|max:255',
             ];
         } else {
             return [
@@ -52,6 +53,7 @@ class FlatRequest extends FormRequest
                 'long_description' => 'required|min:10',
                 'is_active' => 'required',
                 'other_images' => 'nullable|max:10',
+                'location' => 'required|max:255',
             ];
         }
     }

@@ -151,3 +151,6 @@ Breadcrumbs::resource('galleries', "Gallery");
 Breadcrumbs::resource('faqs',$mls->messageLanguage('only_name', 'faq', 2));
 
 Breadcrumbs::resource('blogs',$mls->messageLanguage('only_name', 'blog', 2));
+
+/*------------- Contact Us ------------------------*/
+Breadcrumbs::resource('contact-us', $mls->messageLanguage('only_name', 'contact_us', 2));

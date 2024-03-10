@@ -40,5 +40,5 @@ return [
 'testimonial' => 'Testimonial|Testimonials',
 'team' => 'Team|Teams',
 'blog' => 'Blog|Blogs',
-
+'contact_us' => 'Contact Us',
 ];

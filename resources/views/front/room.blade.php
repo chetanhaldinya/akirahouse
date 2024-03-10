@@ -2,7 +2,7 @@
 @section('content')
     <!-- Page Banner Start -->
     <section class="page-banner-area pt-140 rpt-80 pb-240 rpb-150 rel z-1 bgs-cover bgc-black text-center"
-        style="background-image: url({{ asset('front/assets/images/background/banner.jpg') }})">
+        style="background-image: url({{ asset('front/assets/images/bg-header-banner.jpg') }})">
         <div class="container">
             <div class="banner-inner text-white rpb-25">
                 <h1 class="page-title wow fadeInUp delay-0-2s">Our Flats</h1>
@@ -22,8 +22,6 @@
             <span></span><span></span>
         </div>
     </section>
-    <!-- Page Banner End -->
-
 
     <!-- Search Filter and Features Start -->
     {{-- <div class="search-and-features-area pb-50 rpb-20 rel z-1">
@@ -67,10 +65,14 @@
         </div>
     </div>
     <!-- Search Filter and Features End --> --}}
-
+    <div class="share-icons">
+        {{-- <a target="_blank" href="" class="btn share-button" data-share="facebook"><i class="fab fa-facebook"></i></a> --}}
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello%20there!%20Please share your rental flats qutations" class="btn share-button" data-share="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a target="_blank" href="https://www.instagram.com/akirahomess" class="btn share-button" data-share="instagram"><i class="fab fa-instagram"></i></a>
+    </div>
 
     <!-- Rooms Area start -->
-    <section class="rooms-grid-area pt-125 pb-125 rpb-95 rel z-2">
+    <section class="rooms-grid-area pt-125 pb-25 rpb-95 rel z-2">
         <div class="container">
             <div class="row">
                 @foreach ($flats as $flat)
@@ -94,7 +96,7 @@
                                 <p>{{isset($flat->short_description) ? setStringLength($flat->short_description,80) : 'Na'}}</p>
                                 <div class="price">Price <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per night</div>
                             </div>
-                            <a class="theme-btn" href="contact.html">Book Now <i class="fal fa-angle-right"></i></a>
+                            <a class="theme-btn" style="background-color: #ab6034;" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there! I want detail of your flat {{$flat->title}},  which is located  {{isset($flat->location)? $flat->location:'Jaipur'}}. Please share qutation of this flat.">Book Now <i class="fal fa-angle-right"></i></a>
                         </div>
                     </div>
                 @endforeach

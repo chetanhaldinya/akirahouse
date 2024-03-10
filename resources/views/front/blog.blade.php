@@ -23,7 +23,11 @@
     </section>
     <!-- Page Blog End -->
     
-    
+    <div class="share-icons">
+        {{-- <a target="_blank" href="" class="btn share-button" data-share="facebook"><i class="fab fa-facebook"></i></a> --}}
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello%20there!%20Please share your rental flats qutations" class="btn share-button" data-share="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a target="_blank" href="https://www.instagram.com/akirahomess" class="btn share-button" data-share="instagram"><i class="fab fa-instagram"></i></a>
+    </div>
     <!-- Blog List Start -->
     <section class="blog-page-area py-130 rpy-100 rel z-1">
         <div class="container">

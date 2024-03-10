@@ -11,7 +11,7 @@
                                 <div class="slider-content">
                                     <span class="sub-title"><i class="fal fa-arrow-right"></i> Welcome to Akirahomes</span>
                                     <h1>Enjoy Vacations With <span>Luxury Flat </span></h1>
-                                    <a href="room-grid.html" class="theme-btn">Explore Our Rooms <i
+                                    <a href="{{route('front.room')}}" class="theme-btn">Explore Our Rooms <i
                                             class="far fa-angle-right"></i></a>
                                 </div>
                             </div>
@@ -45,7 +45,62 @@
             <span></span><span></span>
         </div>
     </section>
-    <!-- Slider Section End -->
+    <div class="share-icons">
+        {{-- <a target="_blank" href="" class="btn share-button" data-share="facebook"><i class="fab fa-facebook"></i></a> --}}
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello%20there!%20Please share your rental flats qutations" class="btn share-button" data-share="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a target="_blank" href="https://www.instagram.com/akirahomess" class="btn share-button" data-share="instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+    <!-- Hotel Area start -->
+    <section class="hotel-area py-130 rpy-100 rel z-1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8 col-md-10">
+                    <div class="section-title text-center mb-60 rmb-40 wow fadeInUp delay-0-2s">
+                        <h2>Explore Luxury Flats & Rooms Are People Choosing</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="hotel-carousel-active">
+                @foreach ($flats as $flat)
+                    <div class="hotel-item wow fadeInUp delay-0-2s">
+                        <div class="content">
+                            <div class="top">
+                                <h3><a
+                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? $flat->title : 'na' }}</a>
+                                </h3>
+                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
+                                </p>
+                            </div>
+                            <div class="bottom">
+                                <div class="price">From
+                                    <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per
+                                    night
+                                </div>
+                                <div class="d-flex justify-content-between"></div>
+                                <a class="theme-btn style-two"
+                                    href="{{ route('front.flat_detail', $flat->slug) }}">Details <i
+                                        class="fal fa-angle-right"></i></a>
+                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there! I want detail of your flat {{$flat->title}},  which is located  {{isset($flat->location)? $flat->location:'Jaipur'}}. Please share qutation of this flat." style="color:#fff; background: #ab6034; font-size: 30px;" class="m-2 btn share-button theme-btn style-two" data-share="whatsapp"><i style="font-size: 30px;" class="fab fa-whatsapp"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="{{ $flat->image }}" alt="Flat">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="bg-lines for-bg-white">
+            <span></span><span></span>
+            <span></span><span></span>
+            <span></span><span></span>
+            <span></span><span></span>
+            <span></span><span></span>
+        </div>
+    </section>
+    <!-- Hotel Area end -->
     <!-- Rooms Area start -->
     <section class="rooms-area pt-130 rpt-100 pb-100 rpb-70 rel z-2">
         <div class="container">
@@ -87,8 +142,11 @@
                                     night
                                 </div>
                             </div>
-                            <a class="theme-btn style-two" href="contact.html">Book Now <i
-                                    class="fal fa-angle-right"></i></a>
+                            <div class="d-flex">
+                                <a style="color:#fff; background: #ab6034" class="m-2 theme-btn style-two" href="{{route('front.flat_detail', $flat->slug)}}">Details <i
+                                        class="fal fa-angle-right"></i></a>
+                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there! I want detail of your flat {{$flat->title}},  which is located  {{isset($flat->location)? $flat->location:'Jaipur'}}. Please share qutation of this flat." style="color:#fff; background: #ab6034" class="m-2 btn share-button theme-btn style-two" data-share="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -154,10 +212,51 @@
             </div>
         </section>
         <!-- Counter Section End -->
+        <section class="about-area-three pb-130 rpb-95 rel">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="about-content-three rmb-55 wow fadeInLeft delay-0-2s animated" style="visibility: visible; animation-name: fadeInLeft;">
+                            <div class="section-title mb-30">
+                                <span class="sub-title mb-15">About Company</span>
+                                <h2>World Class Luxury Hotel &amp; Restaurant Near City</h2>
+                                <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+                            </div>
+                            <a href="about.html" class="theme-btn">Learn More Us <i class="far fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="about-three-right wow fadeInRight delay-0-2s animated" style="visibility: visible; animation-name: fadeInRight;">
+                            <div class="counter-item-two counter-text-wrap counted">
+                                <span class="count-text" data-speed="3000" data-stop="698">698</span>
+                                <div class="content">
+                                    <h4>Regular Clients</h4>
+                                    <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain</p>
+                                </div>
+                            </div>
+                            <div class="counter-item-two counter-text-wrap counted">
+                                <span class="count-text" data-speed="3000" data-stop="785">785</span>
+                                <div class="content">
+                                    <h4>Luxury Rooms</h4>
+                                    <p>Nam libero tempore cum soluta nobis est eligeoptioy cumque nihil impedit quo minus quod maxime</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-lines for-bg-white">
+               <span></span><span></span>
+               <span></span><span></span>
+               <span></span><span></span>
+               <span></span><span></span>
+               <span></span><span></span>
+            </div>
+        </section>
         <div class="for-bg-and-shapes rel z-1">
 
         <!-- Features Section Start -->
-        <section class="features-area pb-65 rpb-35 rel z-1">
+        <section class="features-area pb-65 rpb-35 rel z-1" style="margin-bottom: 20px">
             <div class="container">
                 <div class="row text-white">
                     <div class="col-xl-6 col-md-6">
@@ -211,54 +310,6 @@
 
 
 
-    <!-- Hotel Area start -->
-    <section class="hotel-area py-130 rpy-100 rel z-1">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8 col-md-10">
-                    <div class="section-title text-center mb-60 rmb-40 wow fadeInUp delay-0-2s">
-                        <h2>Explore Luxury Flats & Rooms Are People Choosing</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-carousel-active">
-                @foreach ($flats as $flat)
-                    <div class="hotel-item wow fadeInUp delay-0-2s">
-                        <div class="content">
-                            <div class="top">
-                                <h3><a
-                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? $flat->title : 'na' }}</a>
-                                </h3>
-                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
-                                </p>
-                            </div>
-
-                            <div class="bottom">
-                                <div class="price">From
-                                    <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per
-                                    night
-                                </div>
-                                <a class="theme-btn style-two"
-                                    href="{{ route('front.flat_detail', $flat->slug) }}">Details <i
-                                        class="fal fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="image">
-                            <img src="{{ $flat->image }}" alt="Flat">
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="bg-lines for-bg-white">
-            <span></span><span></span>
-            <span></span><span></span>
-            <span></span><span></span>
-            <span></span><span></span>
-            <span></span><span></span>
-        </div>
-    </section>
-    <!-- Hotel Area end -->
 
 
     <!-- Video Area start -->
@@ -330,7 +381,7 @@
     <section class="testimonials-area py-130 rpy-100 rel z-1 bg-color-and-shapes bgc-black">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 wow fadeInLeft delay-0-2s">
+                {{-- <div class="col-lg-5 wow fadeInLeft delay-0-2s">
                     <div class="booking-search rmb-55 rel bg-white">
                         <div class="section-title">
                             <span class="sub-title mb-5">Search Flats</span>
@@ -360,7 +411,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-7">
                     <div class="testimonial-right text-white wow fadeInRight delay-0-2s">
                         <div class="section-title mb-65 rmb-45">

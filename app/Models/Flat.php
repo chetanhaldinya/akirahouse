@@ -24,6 +24,7 @@ class Flat extends Model
         'short_description', 
         'long_description',
         'is_active',
+        'location',
     ];
 
 

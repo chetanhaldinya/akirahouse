@@ -113,6 +113,22 @@
     </div>
     <!--end::Input group-->
 
+      <!--begin::Input group-->
+      <div class="row mb-6">
+        <!--begin::Label-->
+        <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.location', 1) }}</label>
+        <!--end::Label-->
+        <!--begin::Col-->
+        <div class="col-lg-10 fv-row">
+            {!! Form::text('location', null, [
+                'placeholder' => trans_choice('content.location', 1),
+                'class' => 'form-control only_number form-control-lg form-control-solid mb-3 mb-lg-0',
+            ]) !!}
+        </div>
+        <!--end::Col-->
+   </div>
+   <!--end::Input group-->
+
     <!--begin::Input group-->
     <div class="row mb-6">
         <!--begin::Label-->

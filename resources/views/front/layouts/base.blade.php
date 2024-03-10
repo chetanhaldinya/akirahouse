@@ -32,11 +32,43 @@
     <link rel="stylesheet" href="{{asset('front/assets/css/slick.min.css')}}">
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('front/assets/css/style.css')}}">
+    <style>
+        /* Fixed position for share icons */
+        .share-icons {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            z-index: 999;
+        }
+
+        /* Style for the share icon buttons */
+        .share-icons a {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 25px;
+            color: #fff;
+            text-align: center;
+            background-color: #ab6034;
+            padding: 10px;
+            border-radius: 15%;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        /* Hover effect for the buttons */
+        .share-icons a:hover {
+            background-color: #f04347b5;
+        }
+        .btn.share-button{
+            line-height: 0;
+        }
+    </style>
     @stack('styles')
 </head>
 <body class="home-one">
-    <div class="page-wrapper">
 
+    <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
 
@@ -45,8 +77,7 @@
 @include('front.layouts.footer')
     </div>
     <!--End pagewrapper-->
-   
-    
+    @stack('scripts')
     <!-- Jquery -->
     <script src="{{asset('front/assets/js/jquery-3.6.0.min.js')}}"></script>
     <!-- Bootstrap -->

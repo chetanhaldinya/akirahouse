@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Front\ContactUsRequest;
 use App\Models\Banner;
+use App\Models\ContactUs;
 use App\Models\Flat;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $home_view, $room_list, $room_detail, $blog_list, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
+    protected $home_view, $room_list, $room_detail, $blog_list, $connect_page, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
 
     public function __construct()
     {
@@ -19,6 +21,7 @@ class HomeController extends Controller
         $this->room_list = 'front.room';
         $this->blog_list = 'front.blog';
         $this->contact_page = 'front.contact';
+        $this->connect_page = 'front.connect_with_us';
         $this->about_page = 'front.about';
         $this->service_page = 'front.service';
         $this->gallery_page = 'front.gallery';
@@ -63,6 +66,12 @@ class HomeController extends Controller
         return view($this->contact_page);
     }
 
+    public function connect()
+    {
+       
+        return view($this->connect_page);
+    }
+
     public function about()
     {
        
@@ -82,6 +91,13 @@ class HomeController extends Controller
     public function faq()
     {
         return view($this->faq);
+    }
+
+    public function contactUsStore(ContactUsRequest $request)
+    {
+        $input = $request->validated();
+        $data = ContactUs::create($input);
+        return redirect()->route('front.home');
     }
 
 }
