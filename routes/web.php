@@ -104,6 +104,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/flats/status/{flat}/{status}', 'FlatController@status');
         Route::resource('flats', FlatController::class);
 
+         //Admin Blog manager
+         Route::get('/blogs/status/{blog}/{status}', 'BlogController@status');
+         Route::resource('blogs', BlogController::class);
+
         //testimonials routes
         Route::controller(TestimonialController::class)->group(function () {
             Route::get('/testimonials/status/{id}/{status}', 'status');

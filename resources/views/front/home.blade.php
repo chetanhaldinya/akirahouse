@@ -17,8 +17,7 @@
                             </div>
                             <div class="col-xl-8">
                                 <div class="slider-image">
-                                    <img style="max-width: 1100px; max-height:600px;" src="{{ $banner->image }}"
-                                        alt="Slider">
+                                    <img style="max-height:600px;" src="{{ $banner->image }}" alt="Slider">
                                 </div>
                             </div>
                         </div>
@@ -57,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <a class="theme-btn mb-40 wow fadeInRight delay-0-2s" href="{{route('front.room')}}">Explore Rooms <i
+                    <a class="theme-btn mb-40 wow fadeInRight delay-0-2s" href="{{ route('front.room') }}">Explore Rooms <i
                             class="fal fa-angle-right"></i></a>
                 </div>
             </div>
@@ -69,7 +68,7 @@
                                 <img src="{{ $flat->image }}" alt="Room">
                             </div>
                             <div class="content">
-                                <h4><a href="{{route('front.flat_detail', $flat->slug)}}">Look Our Luxury Rooms</a></h4>
+                                <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">Look Our Luxury Rooms</a></h4>
                                 <ul class="blog-meta">
                                     <li>
                                         <i class="far fa-bed-alt"></i>
@@ -85,7 +84,8 @@
                                 </p>
                                 <div class="price">Price
                                     <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per
-                                    night</div>
+                                    night
+                                </div>
                             </div>
                             <a class="theme-btn style-two" href="contact.html">Book Now <i
                                     class="fal fa-angle-right"></i></a>
@@ -106,40 +106,55 @@
     <!-- Rooms Area end -->
 
 
-    <div class="for-bg-and-shapes rel z-1">
+    
         <!-- Counter Section Start -->
-        <div class="counter-area pb-110 rpb-80 rel z-1">
+        <section class="hotel-area py-130 rpy-100 rel z-1"  style="padding-top: 0;">
             <div class="container">
-                <div class="row gap-70">
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="counter-item counter-text-wrap wow fadeInUp delay-0-2s">
-                            <span class="count-text" data-speed="3000" data-stop="55">0</span>
-                            <span class="counter-title">Flats</span>
+                
+                <div class="hotel-carousel-active">
+                    <div class="hotel-item wow fadeInUp delay-0-2s">
+                        <div class="content" style="width:100%; padding: 20px;">
+                            <div class="top counter-item counter-text-wrap wow fadeInUp delay-0-3s" style="margin-bottom: 0px;">
+                                <h3 class="count-text" data-speed="3000" data-stop="55">0</h3>
+                                <span class="counter-title">Flats</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="counter-item counter-text-wrap wow fadeInUp delay-0-3s">
-                            <span class="count-text" data-speed="3000" data-stop="500">0</span>
-                            <span class="counter-title">Luxury Rooms</span>
+                {{-- </div> --}}
+                {{-- <div class="hotel-carousel-active"> --}}
+                    <div class="hotel-item wow fadeInUp delay-0-2s">
+                        <div class="content" style="width:100%; padding: 20px;">
+                            <div class="top counter-item counter-text-wrap wow fadeInUp delay-0-3s" style="margin-bottom: 0px;">
+                                <h3 class="count-text" data-speed="3000" data-stop="500">0</h3>
+                                <span class="counter-title">Luxury Rooms</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="counter-item counter-text-wrap wow fadeInUp delay-0-4s">
-                            <span class="count-text" data-speed="80" data-stop="68">0</span>
-                            <span class="counter-title">Villas</span>
+                {{-- </div> --}}
+                {{-- <div class="hotel-carousel-active"> --}}
+                    <div class="hotel-item wow fadeInUp delay-0-2s">
+                        <div class="content" style="width:100%; padding: 20px;">
+                            <div class="top counter-item counter-text-wrap wow fadeInUp delay-0-3s" style="margin-bottom: 0px;">
+                                <h3 class="count-text" data-speed="80" data-stop="68">0</h3>
+                                <span class="counter-title">Villas</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="counter-item counter-text-wrap wow fadeInUp delay-0-5s">
-                            <span class="count-text" data-speed="3000" data-stop="999">0</span>
-                            <span class="counter-title">Regular Guests</span>
+                {{-- </div> --}}
+                {{-- <div class="hotel-carousel-active"> --}}
+                    <div class="hotel-item wow fadeInUp delay-0-2s">
+                        <div class="content" style="width:100%; padding: 20px;">
+                            <div class="top counter-item counter-text-wrap wow fadeInUp delay-0-3s" style="margin-bottom: 0px;">
+                                <h3 class="count-text" data-speed="3000" data-stop="999">0</h3>
+                                <span class="counter-title">Regular Guests</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Counter Section End -->
-
+        <div class="for-bg-and-shapes rel z-1">
 
         <!-- Features Section Start -->
         <section class="features-area pb-65 rpb-35 rel z-1">
@@ -180,7 +195,7 @@
         </section>
         <!-- Features Section End -->
 
-        <div class="bg-color-and-shapes bgc-black">
+        <div class="bg-color-and-shapes bgc-black" style="height: 122%;">
             <div class="bg-lines">
                 <span></span><span></span>
                 <span></span><span></span>
@@ -192,6 +207,8 @@
             <div class="wave-shapes-two"></div>
         </div>
     </div>
+
+
 
 
     <!-- Hotel Area start -->
@@ -209,13 +226,20 @@
                     <div class="hotel-item wow fadeInUp delay-0-2s">
                         <div class="content">
                             <div class="top">
-                                <h3><a href="{{route('front.flat_detail', $flat->slug)}}">{{isset($flat->title) ? $flat->title : "na"}}</a></h3>
-                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}</p>
+                                <h3><a
+                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? $flat->title : 'na' }}</a>
+                                </h3>
+                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
+                                </p>
                             </div>
 
                             <div class="bottom">
-                                <div class="price">From <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per night</div>
-                                <a class="theme-btn style-two" href="{{route('front.flat_detail', $flat->slug)}}">Details <i
+                                <div class="price">From
+                                    <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per
+                                    night
+                                </div>
+                                <a class="theme-btn style-two"
+                                    href="{{ route('front.flat_detail', $flat->slug) }}">Details <i
                                         class="fal fa-angle-right"></i></a>
                             </div>
                         </div>
@@ -258,7 +282,8 @@
                     <div class="food-drink-content rmb-55">
                         <div class="section-title mb-40 wow fadeInUp delay-0-2s">
                             <h2>World Class Luxury Flats & Rooms Near City</h2>
-                            <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+                            <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by
+                                the charms of pleasure of the moment</p>
                         </div>
                         <div class="feature-list">
                             <div class="feature-item wow fadeInUp delay-0-2s">
@@ -280,7 +305,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="theme-btn style-two mt-25 wow fadeInUp delay-0-4s">Read More  <i
+                        <a href="about.html" class="theme-btn style-two mt-25 wow fadeInUp delay-0-4s">Read More <i
                                 class="far fa-angle-right"></i></a>
                     </div>
                 </div>
@@ -290,7 +315,7 @@
                         <div class="popular-clients">
                             <span>Popular Client</span>
                             @foreach ($testimonials as $testimonial)
-                            <img src="{{$testimonial->image}}" alt="Client">
+                                <img src="{{ $testimonial->image }}" alt="Client">
                             @endforeach
                         </div>
                     </div>
@@ -345,25 +370,25 @@
                         <div class="testimonial-part">
                             <div class="testimonial-active">
                                 @foreach ($testimonials as $testimonial)
-                                <div class="testimonial-item">
-                                    <p>{{isset($testimonial->content) ?$testimonial->content : 'Na' }}</p>
-                                    <div class="testi-author">
-                                        <img style="max-width: 55px; max-height: 55px;" src="{{ $testimonial->image }}"
-                                            alt="Testi Thumb">
-                                        <div class="testi-des">
-                                            <h5>{{isset($testimonial->name) ? $testimonial->name : 'Na'}}</h5>
-                                            <span>{{isset($testimonial->designation) ? $testimonial->designation : 'Na'}}</span>
+                                    <div class="testimonial-item">
+                                        <p>{{ isset($testimonial->content) ? $testimonial->content : 'Na' }}</p>
+                                        <div class="testi-author">
+                                            <img style="max-width: 55px; max-height: 55px;"
+                                                src="{{ $testimonial->image }}" alt="Testi Thumb">
+                                            <div class="testi-des">
+                                                <h5>{{ isset($testimonial->name) ? $testimonial->name : 'Na' }}</h5>
+                                                <span>{{ isset($testimonial->designation) ? $testimonial->designation : 'Na' }}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
                             <div class="testimonial-thums">
                                 @foreach ($testimonials as $testimonial)
-                                <div class="testi-thumb-item">
-                                    <img style="max-width: 55px; max-height: 55px;" src="{{ $testimonial->image }}"
-                                    alt="Testi Thumb">
-                                </div>
+                                    <div class="testi-thumb-item">
+                                        <img style="max-width: 55px; max-height: 55px;" src="{{ $testimonial->image }}"
+                                            alt="Testi Thumb">
+                                    </div>
                                 @endforeach
                             </div>
                         </div>

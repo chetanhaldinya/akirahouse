@@ -214,4 +214,7 @@ return [
     'content' => 'Content',
     'team' => 'Team|Teams',
     'position' => 'Position|Positions',
+    'blog' => 'Blog|Blogs',
+    'status' => 'Status|Status',
+    'description' => 'Description|Description',
 ];

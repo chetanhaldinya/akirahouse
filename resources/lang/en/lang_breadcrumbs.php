@@ -39,5 +39,6 @@ return [
 'flat' => 'Flat|Flats',
 'testimonial' => 'Testimonial|Testimonials',
 'team' => 'Team|Teams',
+'blog' => 'Blog|Blogs',
 
 ];

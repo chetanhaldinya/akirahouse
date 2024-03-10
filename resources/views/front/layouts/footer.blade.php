@@ -1,5 +1,5 @@
 
-        <!-- Instagram Area start -->
+        {{-- <!-- Instagram Area start -->
         <section class="instagram-area">
             <div class="instagram-item wow fadeInDown delay-0-2s animated" style="visibility: visible; animation-name: fadeInDown;">
                 <a class="instagram-gallery" href="https://www.instagram.com/akirahomess">
@@ -43,7 +43,7 @@
             </div>
             
         </section>
-        <!-- Instagram Area end -->
+        <!-- Instagram Area end --> --}}
         
         
         <!-- footer area start -->
