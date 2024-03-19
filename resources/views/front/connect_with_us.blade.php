@@ -8,7 +8,7 @@
                 <h1 class="page-title wow fadeInUp delay-0-2s">Contact</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center wow fadeInUp delay-0-4s">
-                        <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">home</a></li>
                         <li class="breadcrumb-item active">List Your Property</li>
                     </ol>
                 </nav>

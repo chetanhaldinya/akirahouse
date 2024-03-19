@@ -55,7 +55,7 @@
                             <div class="footer-logo mb-25">
                                 <a href="{{url('/')}}"><img src="{{ $logo_img }}" style="width: 80px;" alt="Logo"></a>
                             </div>
-                            <p>Nam libero tempore cum soluta nobis eseligendi optio cumque nihile impedit quo minus maxime placeat facere</p>
+                            <p>AkiraHomes is your premier destination for hassle-free flat rentals in India. With a user-friendly interface and an extensive selection of properties, we make finding your perfect home a breeze.</p>
                             <div class="social-style-one pt-10">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -68,9 +68,9 @@
                         <div class="footer-widget widget_nav_menu wow fadeInUp delay-0-4s">
                             <h4 class="footer-title">Quick Links</h4>
                             <ul class="list-style-one">
-                                <li><a href="about.html">About company</a></li>
-                                <li><a href="about.html">Team Member</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="javascript::void();">About company</a></li>
+                                <li><a href="{{route('front.connect')}}">Connect With us</a></li>
+                                <li><a href="{{route('front.contact')}}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -79,8 +79,8 @@
                             <h4 class="footer-title">Features</h4>
                             <ul class="list-style-one">
                                 <li><a href="javascript::void();">Wifi</li>
-                                <li><a href="javascript::void();">...</a></li>
-                                <li><a href="javascript::void();">...</a></li>
+                                <li><a href="javascript::void();">Swimming Pool</a></li>
+                                <li><a href="javascript::void();">Well Cleaning Rooms</a></li>
                             </ul>
                         </div>
                     </div>

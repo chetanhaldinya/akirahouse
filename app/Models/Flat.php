@@ -51,7 +51,7 @@ class Flat extends Model
                 'method'  => null,
                 'separator' => '-',
                 'unique' => true,
-                'onUpdate' => false,
+                'onUpdate' => true,
             ]
         ];
     }

@@ -25,7 +25,7 @@ class FlatRequest extends FormRequest
     {
         if (!request()->is('admin/flats/create')) {
             return [
-                'title' => 'required|alpha_spaces|max:50|unique:flats,title,' .request()->id,
+                'title' => 'required|max:100|unique:flats,title,' .request()->id,
                 'amount' => 'required|integer|max:15000000',
                 'image' => 'nullable|image',
                 'size' => 'required|max:15',
@@ -36,12 +36,12 @@ class FlatRequest extends FormRequest
                 'short_description' => 'required|min:10',
                 'long_description' => 'required|min:10',
                 'is_active' => 'required',
-                'other_images' => 'nullable|max:10',
+                'other_images' => 'nullable',
                 'location' => 'required|max:255',
             ];
         } else {
             return [
-                'title' => 'required|alpha_spaces|max:50|unique:flats,title',
+                'title' => 'required|max:100|unique:flats,title',
                 'amount' => 'required|integer|max:15000000',
                 'image' => 'nullable|image',
                 'size' => 'required|max:15',
@@ -52,7 +52,7 @@ class FlatRequest extends FormRequest
                 'short_description' => 'required|min:10',
                 'long_description' => 'required|min:10',
                 'is_active' => 'required',
-                'other_images' => 'nullable|max:10',
+                'other_images' => 'nullable',
                 'location' => 'required|max:255',
             ];
         }

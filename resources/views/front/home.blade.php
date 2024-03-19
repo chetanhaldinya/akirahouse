@@ -67,7 +67,7 @@
                         <div class="content">
                             <div class="top">
                                 <h3><a
-                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? $flat->title : 'na' }}</a>
+                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? setStringLength($flat->title, 12) : 'na' }}</a>
                                 </h3>
                                 <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
                                 </p>
@@ -220,9 +220,9 @@
                             <div class="section-title mb-30">
                                 <span class="sub-title mb-15">About Company</span>
                                 <h2>World Class Luxury Hotel &amp; Restaurant Near City</h2>
-                                <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+                                <p>AkiraHomes is your premier destination for hassle-free flat rentals in India. With a user-friendly interface and an extensive selection of properties, we make finding your perfect home a breeze. Whether you're searching for a cozy studio or a spacious apartment, AkiraHomes has you covered. Experience convenience, reliability, and unparalleled service with AkiraHomes - your trusted partner in rental solutions.</p>
                             </div>
-                            <a href="about.html" class="theme-btn">Learn More Us <i class="far fa-angle-right"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there!" class="theme-btn">Whatsapp Now<i class="far fa-angle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-6">
@@ -231,14 +231,14 @@
                                 <span class="count-text" data-speed="3000" data-stop="698">698</span>
                                 <div class="content">
                                     <h4>Regular Clients</h4>
-                                    <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain</p>
+                                    <p>AkiraHomes: Your go-to for stress-free flat rentals in India. Explore our diverse listings and experience seamless service every time.</p>
                                 </div>
                             </div>
                             <div class="counter-item-two counter-text-wrap counted">
                                 <span class="count-text" data-speed="3000" data-stop="785">785</span>
                                 <div class="content">
                                     <h4>Luxury Rooms</h4>
-                                    <p>Nam libero tempore cum soluta nobis est eligeoptioy cumque nihil impedit quo minus quod maxime</p>
+                                    <p>Indulge in opulent living with our luxurious rooms. Impeccable design, premium amenities, and unparalleled comfort await you. Experience luxury redefined.</p>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
         <div class="container-fluid gap-wide">
             <div class="video-part wow fadeInUp delay-0-2s">
                 <img src="{{ asset('front/assets/images/home/banner_youtube.png') }}" alt="Video">
-                <a href="https://www.youtube.com/watch?v=9Y7ma241N8k" class="mfp-iframe video-play" tabindex="-1"><i
+                <a href="https://youtube.com/shorts/V-iG773Ax68?feature=shared" class="mfp-iframe video-play" tabindex="-1"><i
                         class="fas fa-play"></i></a>
             </div>
         </div>
@@ -356,7 +356,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="theme-btn style-two mt-25 wow fadeInUp delay-0-4s">Read More <i
+                        <a href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there!" class="theme-btn style-two mt-25 wow fadeInUp delay-0-4s">Read More <i
                                 class="far fa-angle-right"></i></a>
                     </div>
                 </div>

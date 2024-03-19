@@ -61,7 +61,7 @@
                                 @foreach ($flat->flat_images as $banner)
                                 <div class="row">
                                             <div class="slider-image">
-                                                <img src="{{ $banner->image }}"
+                                                <img style="min-height: 500px;" src="{{ $banner->image }}"
                                                     alt="Slider">
                                             </div>
                                     </div>
@@ -80,7 +80,9 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="room-details-sidebar bgc-lighter p-50 rp-40">
-                        <form class="widget-search-filter wow fadeInUp delay-0-4s animated"
+                        <a  href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there! I want detail of your flat {{$flat->title}},  which is located  {{isset($flat->location)? $flat->location:'Jaipur'}}. Please share qutation of this flat.">
+                        <button class="theme-btn w-100">Book Now<i class="fab fa-whatsapp"></i></button></a>
+                        {{-- <form class="widget-search-filter wow fadeInUp delay-0-4s animated"
                             style="visibility: visible; animation-name: fadeInUp;">
                             <div class="form-group">
                                 <label for="checkin">Check In</label>
@@ -123,7 +125,7 @@
                                 </div>
                             </div>
                             <button class="theme-btn w-100">Check Availability <i class="far fa-angle-right"></i></button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>

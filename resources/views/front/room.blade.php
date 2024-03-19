@@ -82,7 +82,7 @@
                                 <img src="{{ $flat->image }}" alt="Room">
                             </div>
                             <div class="content">
-                                <h4><a href="room-details.html">{{isset($flat->title) ? $flat->title : 'Na'}}</a></h4>
+                                <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">{{isset($flat->title) ? $flat->title : 'Na'}}</a></h4>
                                 <ul class="blog-meta">
                                     <li>
                                         <i class="far fa-bed-alt"></i>

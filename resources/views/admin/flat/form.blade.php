@@ -122,7 +122,7 @@
         <div class="col-lg-10 fv-row">
             {!! Form::text('location', null, [
                 'placeholder' => trans_choice('content.location', 1),
-                'class' => 'form-control only_number form-control-lg form-control-solid mb-3 mb-lg-0',
+                'class' => 'form-control form-control-lg form-control-solid mb-3 mb-lg-0',
             ]) !!}
         </div>
         <!--end::Col-->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Services\DashboardService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -31,10 +32,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        dd(Hash::make("akira@Akirahomes.com76%$"));
         // $user = Auth::user();
         // dd($user);
         // dd($user->getRoleNames(), $user->roles, $user->permissions, $user->getPermissionsViaRoles(), $user->getAllPermissions());
-
         return view('admin.dashboard');
     }
 
