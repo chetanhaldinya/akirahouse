@@ -54,7 +54,7 @@
                         </ul>
                         <div class="price mb-35">{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }} Per
                             Night</div>
-                        <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}</p>
+                        <p>{{ isset($flat->short_description) ? $flat->short_description : 'Na' }}</p>
 
                         <section class="main-slider-area">
                             <div class="main-slider-active">

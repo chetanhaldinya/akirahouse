@@ -91,14 +91,14 @@
                    <div class="row">
                        <div class="col-lg-6">
                             <div class="copyright-text">
-                                <p>© 2024 <a href="index.html">AkiraHomes.</a> All Rights Reserved.</p>
+                                <p>© 2024 <a href="{{url("/")}}">AkiraHomes.</a> All Rights Reserved.</p>
                             </div>
                        </div>
                        <div class="col-lg-6 text-lg-end">
                            <ul class="footer-bottom-nav rpb-10">
-                               <li><a href="about.html">Terms</a></li>
-                               <li><a href="about.html">Privacy Policy</a></li>
-                               <li><a href="faqs.html">FAQs</a></li>
+                               <li><a href="javascript::void();">Terms</a></li>
+                               <li><a href="javascript::void();">Privacy Policy</a></li>
+                               <li><a href="javascript::void();">FAQs</a></li>
                            </ul>
                        </div>
                    </div>

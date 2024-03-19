@@ -67,9 +67,9 @@
                         <div class="content">
                             <div class="top">
                                 <h3><a
-                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? setStringLength($flat->title, 12) : 'na' }}</a>
+                                        href="{{ route('front.flat_detail', $flat->slug) }}">{{ isset($flat->title) ? setStringLength($flat->title, 8) : 'na' }}</a>
                                 </h3>
-                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
+                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 70) : 'Na' }}
                                 </p>
                             </div>
                             <div class="bottom">
@@ -120,10 +120,12 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="room-item wow fadeInUp delay-0-2s">
                             <div class="image">
-                                <img src="{{ $flat->image }}" alt="Room">
+                                <img src="{{ isset($flat->image) ? $flat->image : null }}" alt="Room">
                             </div>
                             <div class="content">
-                                <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">Look Our Luxury Rooms</a></h4>
+                                <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">
+                                    {{ isset($flat->title) ? setStringLength($flat->title, 10) : 'Na' }}
+                                </a></h4>
                                 <ul class="blog-meta">
                                     <li>
                                         <i class="far fa-bed-alt"></i>
@@ -135,7 +137,7 @@
                                         <a href="#">Size : {{ isset($flat->size) ? $flat->size : 'Na' }}</a>
                                     </li>
                                 </ul>
-                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 80) : 'Na' }}
+                                <p>{{ isset($flat->short_description) ? setStringLength($flat->short_description, 70) : 'Na' }}
                                 </p>
                                 <div class="price">Price
                                     <span>{{ currencyIcon() }}{{ isset($flat->amount) ? $flat->amount : '5000' }}</span>/per
@@ -343,7 +345,7 @@
                                 </div>
                                 <div class="content">
                                     <h5>Trusted Partners</h5>
-                                    <p>Sed ut perspiciatis omniste natus voluptatem accus</p>
+                                    <p>Discover the ultimate peace of mind with AkiraHome, your trusted partner for flat rentals. With a focus on quality, reliability, and personalized service.</p>
                                 </div>
                             </div>
                             <div class="feature-item wow fadeInUp delay-0-3s">
@@ -352,7 +354,7 @@
                                 </div>
                                 <div class="content">
                                     <h5>Luxury Services</h5>
-                                    <p>Quis autem voluptate velise molestiae conse rem</p>
+                                    <p>Indulge in unparalleled luxury with our exclusive flat rentals at AkiraHome. Elevate your living experience with a range of premium services designed to cater to your every need.</p>
                                 </div>
                             </div>
                         </div>
