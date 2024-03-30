@@ -68,19 +68,19 @@
                         <div class="footer-widget widget_nav_menu wow fadeInUp delay-0-4s">
                             <h4 class="footer-title">Quick Links</h4>
                             <ul class="list-style-one">
-                                <li><a href="javascript::void();">About company</a></li>
-                                <li><a href="{{route('front.connect')}}">Connect With us</a></li>
+                                <li><a href="{{route('front.room')}}">Properties</a></li>
                                 <li><a href="{{route('front.contact')}}">Contact Us</a></li>
+                                <li><a href="{{route('front.connect')}}">List Your Property</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6">
                         <div class="footer-widget widget_nav_menu wow fadeInUp delay-0-4s">
-                            <h4 class="footer-title">Features</h4>
+                            <h4 class="footer-title">Pages</h4>
                             <ul class="list-style-one">
-                                <li><a href="javascript::void();">Wifi</li>
-                                <li><a href="javascript::void();">Swimming Pool</a></li>
-                                <li><a href="javascript::void();">Well Cleaning Rooms</a></li>
+                                <li><a href="{{url("/")}}/'about-us">About Us</a></li>
+                                <li><a href="{{url("/")}}/terms-of-service">terms-of-service</a></li>
+                                <li><a href="{{url("/")}}/privacy-policy">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -96,9 +96,9 @@
                        </div>
                        <div class="col-lg-6 text-lg-end">
                            <ul class="footer-bottom-nav rpb-10">
-                               <li><a href="javascript::void();">Terms</a></li>
-                               <li><a href="javascript::void();">Privacy Policy</a></li>
-                               <li><a href="javascript::void();">FAQs</a></li>
+                            <li><a href="{{url("/")}}/'about-us">About Us</a></li>
+                            <li><a href="{{url("/")}}/terms-of-service">Terms Of Service</a></li>
+                            <li><a href="{{url("/")}}/privacy-policy">Privacy Policy</a></li>
                            </ul>
                        </div>
                    </div>

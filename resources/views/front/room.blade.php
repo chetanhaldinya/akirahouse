@@ -79,7 +79,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="room-item style-two wow fadeInUp delay-0-2s">
                             <div class="image">
-                                <img src="{{ $flat->image }}" alt="Room">
+                                <img src="{{ $flat->image }}" alt="{{isset($flat->title) ? $flat->title : 'Flat Image'}}">
                             </div>
                             <div class="content">
                                 <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">{{isset($flat->title) ? setStringLength($flat->title, 12) : 'Na'}}</a></h4>

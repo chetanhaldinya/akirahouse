@@ -10,14 +10,14 @@
                             <div class="col-xl-3">
                                 <div class="slider-content">
                                     <span class="sub-title"><i class="fal fa-arrow-right"></i> Welcome to Akirahomes</span>
-                                    <h1>Enjoy Vacations With <span>Luxury Flat </span></h1>
-                                    <a href="{{route('front.room')}}" class="theme-btn">Explore Our Rooms <i
+                                    <h1>Enjoy Vacations With <span>Luxury Flat In Jaipur </span></h1>
+                                    <a href="{{route('front.room')}}" class="theme-btn">Explore Our Flats <i
                                             class="far fa-angle-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-xl-8">
                                 <div class="slider-image">
-                                    <img style="max-height:600px;" src="{{ $banner->image }}" alt="Slider">
+                                    <img style="max-height:600px;" src="{{ $banner->image }}" alt="Akira homes">
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="image">
-                            <img src="{{ $flat->image }}" alt="Flat">
+                            <img src="{{ $flat->image }}" alt="{{isset($flat->title) ? $flat->title : 'Flat Image'}}">
                         </div>
                     </div>
                 @endforeach
@@ -120,7 +120,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="room-item wow fadeInUp delay-0-2s">
                             <div class="image">
-                                <img src="{{ isset($flat->image) ? $flat->image : null }}" alt="Room">
+                                <img src="{{ isset($flat->image) ? $flat->image : null }}" alt="{{isset($flat->title) ? $flat->title : 'Flat Image'}}">
                             </div>
                             <div class="content">
                                 <h4><a href="{{ route('front.flat_detail', $flat->slug) }}">
@@ -220,9 +220,9 @@
                     <div class="col-xl-5 col-lg-6">
                         <div class="about-content-three rmb-55 wow fadeInLeft delay-0-2s animated" style="visibility: visible; animation-name: fadeInLeft;">
                             <div class="section-title mb-30">
-                                <span class="sub-title mb-15">About Company</span>
-                                <h2>World Class Luxury Hotel &amp; Restaurant Near City</h2>
-                                <p>AkiraHomes is your premier destination for hassle-free flat rentals in India. With a user-friendly interface and an extensive selection of properties, we make finding your perfect home a breeze. Whether you're searching for a cozy studio or a spacious apartment, AkiraHomes has you covered. Experience convenience, reliability, and unparalleled service with AkiraHomes - your trusted partner in rental solutions.</p>
+                                <span class="sub-title mb-15">About Us</span>
+                                <h2>World Class Luxury Flats &amp; Villas Near City</h2>
+                                <p>AkiraHomes is your premier destination for hassle-free rental apartment in jaipur. With a user-friendly interface and an extensive selection of properties, we make finding your perfect home a breeze. Whether you're searching for a cozy studio or a spacious apartment, AkiraHomes has you covered. Experience convenience, reliability, and unparalleled service with AkiraHomes - your trusted partner in rental solutions.</p>
                             </div>
                             <a href="https://api.whatsapp.com/send?phone=919057033777&text=Hello there!" class="theme-btn">Whatsapp Now<i class="far fa-angle-right"></i></a>
                         </div>
@@ -233,14 +233,14 @@
                                 <span class="count-text" data-speed="3000" data-stop="698">698</span>
                                 <div class="content">
                                     <h4>Regular Clients</h4>
-                                    <p>AkiraHomes: Your go-to for stress-free flat rentals in India. Explore our diverse listings and experience seamless service every time.</p>
+                                    <p>AkiraHomes: Your go-to for stress-free  rentals apartment in Jaipur. Explore our diverse listings and experience seamless service every time.</p>
                                 </div>
                             </div>
                             <div class="counter-item-two counter-text-wrap counted">
                                 <span class="count-text" data-speed="3000" data-stop="785">785</span>
                                 <div class="content">
-                                    <h4>Luxury Rooms</h4>
-                                    <p>Indulge in opulent living with our luxurious rooms. Impeccable design, premium amenities, and unparalleled comfort await you. Experience luxury redefined.</p>
+                                    <h4>Luxury Flats</h4>
+                                    <p>Indulge in opulent living with our luxurious rooms and home stay in jaipur . Impeccable design, premium amenities, and unparalleled comfort await you. Experience luxury redefined.</p>
                                 </div>
                             </div>
                         </div>

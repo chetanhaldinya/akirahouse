@@ -5,8 +5,13 @@
     <!-- Required meta tags -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="title" content="Best rental apartment and home stay in jaipur">
+    <meta name="description" content="For a memorable stay, explore luxury, fully - furnished, rental apartments and home stays in Jaipur.
+    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="{{url()->current()}}" />
+    <!-- Google tag (gtag.js) -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
@@ -64,14 +69,20 @@
             line-height: 0;
         }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFG05B26MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-SFG05B26MK');
+    </script>
     @stack('styles')
 </head>
 <body class="home-one">
-
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
-
 @include('front.layouts.header')
 @yield('content')
 @include('front.layouts.footer')
