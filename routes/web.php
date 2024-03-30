@@ -28,6 +28,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/galleries', 'gallery')->name('front.gallery');
     Route::get('/faqs', 'faq')->name('front.faq');
     Route::get('/flat/{slug}', 'flat_detail')->name('front.flat_detail');
+    Route::get('/page_content/{slug}', 'static_detail')->name('front.static_detail');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
