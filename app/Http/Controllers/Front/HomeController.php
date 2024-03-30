@@ -7,12 +7,13 @@ use App\Http\Requests\Front\ContactUsRequest;
 use App\Models\Banner;
 use App\Models\ContactUs;
 use App\Models\Flat;
+use App\Models\PageContent;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $home_view, $room_list, $room_detail, $blog_list, $connect_page, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
+    protected $home_view, $room_list, $room_detail, $static , $blog_list, $connect_page, $contact_page,$about_page, $service_page, $gallery_page, $faq_page;
 
     public function __construct()
     {
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $this->gallery_page = 'front.gallery';
         $this->faq_page = 'front.faq';
         $this->room_detail = 'front.room_detail';
+        $this->static = 'front.static';
     }
 
     /**
@@ -46,6 +48,13 @@ class HomeController extends Controller
     {
         $flats = Flat::where('is_active', 1)->paginate(20);
         return view($this->room_list, compact("flats"));
+    }
+
+    public function static($slug){
+        $page_content = PageContent::where('slug',$slug)->orderBy('id','asc')->first();
+        // return view($this->static, compact("page_content"));
+        // $page_content = PageContent::where('title', )->orderBy('id','asc')->first();
+        return view($this->static, compact("page_content"));
     }
 
     public function flat_detail($slug)
